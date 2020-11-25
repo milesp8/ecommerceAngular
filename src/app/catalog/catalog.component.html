@@ -1,2 +1,10 @@
-<div #grid class="grid-container">
-</div>
+<ul #grid class="grid-container">
+  <li *ngFor="let item of itemArr">
+    <div class="grid-item">
+      <a routerLink={{item.link}}>
+        <h3>{{item.name}}</h3>
+        <img class="images" src={{item.img}} alt="Product Image" width="200" height="200">
+      </a>
+    </div>
+  </li>
+</ul>
