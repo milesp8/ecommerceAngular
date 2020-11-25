@@ -4,7 +4,7 @@
   grid-template-columns: auto auto auto;
   padding: 20px;
   grid-column-gap: 150px;
-  grid-row-gap: 200px;
+  grid-row-gap: 100px;
 }
 
 .grid-item {
