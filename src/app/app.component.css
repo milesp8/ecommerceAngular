@@ -11,7 +11,9 @@
   h2,
   h3,
   h4,
-  h5,
+  h5 {
+    text-align: center;    
+  }
   h6 {
     margin: 8px 0;
   }
@@ -22,6 +24,19 @@
 
   .spacer {
     flex: 1;
+  }
+
+  .foot {
+      position: absolute;
+      bottom: auto;
+      display: flex;
+      align-items: center;
+      left: 0;
+      right: 0;
+      height: 100px;
+      background-color: #cc1c1c;
+      color: white;
+      font-weight: 600;
   }
 
   .toolbar {
