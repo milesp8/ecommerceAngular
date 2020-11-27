@@ -7,7 +7,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  dealArr: {name: string, price: number, img: string, link: string} [] = [];
+  constructor() {
+    for (let i = 1; i < 5; i++){
+      const dealitem = {
+        name: 'Product ' + i,
+        price: 19.99,
+        img: 'assets/img/new.png',
+        link: '/catalog'
+      };
+      // tslint:disable-next-line: no-unused-expression
+      this.dealArr.push(dealitem);
+    }
+  }
+
 
   ngOnInit(): void {
   }
