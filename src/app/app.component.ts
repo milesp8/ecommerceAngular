@@ -13,4 +13,10 @@ export class AppComponent {
   goCatalog(){
     window.location.href = 'catalog';
   }
+  goCart(){
+    window.location.href = 'cart';
+  }
+  goAccount(){
+    window.location.href = 'account';
+  }
 }

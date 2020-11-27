@@ -10,15 +10,12 @@
   integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 <!-- Toolbar/Header -->
 <div class="toolbar" role="banner">
-  <img width="40" alt="UNO Logo" src="../assets/img/unoicon.png" />
-  <button (click)="goHome()">UNO SHOPPING!</button>
-  <div class="spacer"></div>
+  <img width="40" alt="UNO Logo" src="../assets/img/unoicon.png" (click)="goHome()"/>
   <button (click)="goCatalog()">Catalog</button>
   <div class="spacer"></div>
-  <button>Cart</button>
-  <div class="spacer"></div>
-  <button>Account</button>
-  <div class="spacer"></div>
+  <img width="40" alt="Cart" src="../assets/img/unocart.png" (click)="goCart()"/>
+  <img width="40" alt="Acct" src="../assets/img/unoprofile.png" (click)="goAccount()"/>
+  
 </div>
 
 <div class="content" role="main">

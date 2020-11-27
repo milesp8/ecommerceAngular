@@ -55,6 +55,10 @@
   .toolbar img {
     margin: 0 16px;
   }
+  .toolbar img:hover{
+      opacity: 0.8;
+      background-color: #a71818;
+  }
 
   .toolbar #twitter-logo {
     height: 40px;
