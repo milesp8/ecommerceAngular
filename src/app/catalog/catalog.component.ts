@@ -7,11 +7,12 @@ import {Component, OnInit} from '@angular/core';
 })
 
 export class CatalogComponent implements OnInit {
- itemArr: {name: string, img: string, link: string} [] = [];
+ itemArr: {name: string, price: number, img: string, link: string} [] = [];
   constructor() {
     for (let i = 1; i < 20; i++){
       const item = {
         name: 'Product ' + i,
+        price: 29.99,
         img: 'assets/img/new.png',
         link: '/home'
       };
