@@ -14,7 +14,7 @@ export class ProductsComponent implements OnInit {
       price: 29.99,
       img: 'assets/img/new.png',
       link: '/home',
-      text: "Trial text and product description"
+      text: "Trial text and product description, maybe with reviews?"
     };
     // tslint:disable-next-line: no-unused-expression
     this.itemArr.push(item);
