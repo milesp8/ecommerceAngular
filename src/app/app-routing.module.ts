@@ -5,6 +5,7 @@ import { FooterComponent } from './footer/footer.component';
 import { HomeComponent } from './home/home.component';
 import { CartComponent } from './cart/cart.component';
 import { AccountComponent } from './account/account.component';
+import {ProductsComponent } from './products/products.component';
 
 const routes: Routes = [
   {path: 'catalog', component: CatalogComponent},
@@ -12,7 +13,8 @@ const routes: Routes = [
   {path: 'account', component: AccountComponent},
   {path: 'footer', component: FooterComponent},
   {path: '', redirectTo: 'home', pathMatch: 'full'},
-  {path: 'home', component: HomeComponent}
+  {path: 'home', component: HomeComponent},
+  {path: 'products', component: ProductsComponent}
 ];
 
 @NgModule({

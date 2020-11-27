@@ -14,7 +14,7 @@ export class HomeComponent implements OnInit {
         name: 'Product ' + i,
         price: 19.99,
         img: 'assets/img/new.png',
-        link: '/catalog'
+        link: '/products'
       };
       // tslint:disable-next-line: no-unused-expression
       this.dealArr.push(dealitem);
