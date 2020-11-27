@@ -18,8 +18,15 @@ h3{
   color: black;
 }
 
+hr{
+  background-color: rgb(77, 75, 75);
+  margin: 1;
+}
+
 p{
   color: rgb(77, 75, 75);
+  margin-bottom: 0;
+  padding-bottom: 0;
 }
 
 ul {
