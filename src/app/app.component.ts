@@ -7,5 +7,12 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'ecommerceAngular';
-
+  toggleMenu() {
+    var m = document.getElementById('menu');
+    if (m.style.display === "none") {
+      m.style.display = "block";
+    } else {
+      m.style.display = "none";
+    }
+  }
 }
