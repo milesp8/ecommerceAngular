@@ -12,7 +12,7 @@
   h3,
   h4,
   h5 {
-    text-align: center;    
+    text-align: center;
   }
   h6 {
     margin: 8px 0;
@@ -38,7 +38,7 @@
       color: white;
       font-weight: 600;
   }
-  
+
 .hamburger {
   display: block;
   position: relative;
@@ -54,8 +54,8 @@
   background: none;
   border: 0;
 }
- 
- 
+
+
 .hamburger span {
   display: block;
   position: absolute;
@@ -65,7 +65,7 @@
   height: 8px;
   background: #000000;
 }
- 
+
 .hamburger span::before,
 .hamburger span::after {
   display: block;
@@ -76,11 +76,11 @@
   background-color: #050505;
   content: "";
 }
- 
+
 .hamburger span::before {
   top: -15px;
 }
- 
+
 .hamburger span::after {
   bottom: -15px;
 }
@@ -96,6 +96,7 @@
     background-color: #cc1c1c;
     color: white;
     font-weight: 600;
+    position: fixed;
   }
 
   .toolbar img {
