@@ -16,14 +16,14 @@
   <a routerLink = "/home"><img width="40" alt="UNO Logo" src="../assets/img/unoicon.png" title="Go To Home"/></a>
   <a routerLink = "/catalog"> <button  title="Browse Our Catalog">Catalog</button></a>
   <div class="search">
-    <form action="#"> 
+    <form action="#">
       <input type="text"
           placeholder=" Search Products"
-          name="search"> 
-  </form> 
+          name="search">
+  </form>
   </div>
   <div class="spacer"></div>
-  <a routerLink ="/cart"><img width="40" alt="Cart" src="../assets/img/unocart.png" title="My Cart"/></a>
+  <img width="40" alt="Cart" (click)="toggleCart()" src="../assets/img/unocart.png" title="My Cart"/>
   <a routerLink ="/account"><img width="40" alt="Acct" src="../assets/img/unoprofile.png" title="My Profile"/></a>
 
 </div>
@@ -31,6 +31,7 @@
 
 <!--Category Overlay-->
 <app-menu id="menu"></app-menu>
+<app-cart id="cart"></app-cart>
 
 <div class="content" role="main">
   <router-outlet></router-outlet>

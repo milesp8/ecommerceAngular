@@ -1,14 +1,12 @@
 .grid-container {
   display: grid;
-  background-color: rgba(220, 220, 235, 1);
-  grid-template-columns:auto auto auto auto;
-  padding: 106px;
-  grid-column-gap: 150px;
+  grid-template-columns:auto;
+  padding: 0px;
+  grid-column-gap: 0px;
   grid-row-gap: 0px;
 }
 
 .grid-item {
-  background-color: rgba(230, 230, 250, 0.7);
   border: 1px solid rgba(0, 0, 0, 0.8);
   padding: 15px;
   text-align: center;
@@ -27,30 +25,45 @@ button{
 }
 
 h3{
-  color: black;
+  color: white;
 }
 
 h1{
-  color: black;
+  color: white;
   text-align: center;
-  font-weight: 500;
 }
 
-hr{
-  background-color: rgb(77, 75, 75);
-  margin: 1;
-}
 
-.grey{
-  background-color: #E3E3F6;
-}
 
 p{
-  color: rgb(77, 75, 75);
+  color: #DDD;
   margin-bottom: 0;
   padding-bottom: 0;
 }
 
 ul {
   list-style-type: none;
+}
+.scrollable {
+  height: 100%;
+  overflow-y: auto;
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+.space{
+  height:100px
+}
+:host {
+  background: #801A1A;
+  display: none;
+  color: #000;
+  position: fixed;
+  left: 100;
+  top: 60px;
+  right: 0;
+  bottom: 0;
+  width: 10%;
+  min-width: 250px;
+  z-index: 9999;
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
 }

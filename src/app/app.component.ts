@@ -15,4 +15,12 @@ export class AppComponent {
       m.style.display = "none";
     }
   }
+  toggleCart() {
+    var m = document.getElementById('cart');
+    if (m.style.display === "none") {
+      m.style.display = "block";
+    } else {
+      m.style.display = "none";
+    }
+  }
 }
