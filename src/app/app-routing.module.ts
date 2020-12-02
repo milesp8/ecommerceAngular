@@ -14,8 +14,7 @@ const routes: Routes = [
   {path: 'catalog',
     component: CatalogComponent,
     resolve: {
-      prodData: ProductsGuard,
-      categoryData: CategoriesGuard
+      prodData: ProductsGuard
     }
   },
   {path: 'cart', component: CartComponent},
