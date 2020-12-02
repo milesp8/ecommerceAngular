@@ -10,7 +10,7 @@ export class CartComponent implements OnInit {
  itemArr: {name: string, price: number, img: string, link: string} [] = [];
  total = 0;
   constructor() {
-    for (let i = 1; i < 5; i++){
+    for (let i = 0; i < 5; i++){
       const item = {
         name: 'Product ' + i,
         price: 29.99,

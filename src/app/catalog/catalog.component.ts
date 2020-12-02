@@ -35,7 +35,7 @@ export class CatalogComponent implements OnInit {
         name: productsObj[productIndex].name,
         price: productsObj[productIndex].variantIds[0].price,
         img: 'assets/img/new.png',
-        link: '/products/' + productsObj[productIndex]._id,
+        link: '/products/' + productIndex,
         description: productsObj[productIndex].description.toString()
       }
 

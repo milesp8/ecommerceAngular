@@ -22,7 +22,10 @@ const routes: Routes = [
   {path: 'footer', component: FooterComponent},
   {path: '', redirectTo: 'home', pathMatch: 'full'},
   {path: 'home', component: HomeComponent},
-  {path: 'products/:id', component: ProductsComponent},
+  {path: 'products/:id', component: ProductsComponent,
+  resolve: {
+    prodData: ProductsGuard
+  }},
   {path: 'payment', component: PaymentComponent}
 ];
 

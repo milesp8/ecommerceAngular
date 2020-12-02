@@ -21,10 +21,12 @@ export class ProductsComponent implements OnInit {
   ngOnInit(): void {
     this.activeRoute.paramMap.subscribe(params => {
       this.productId = params.get('id');
-      this.name = 'Product ' + this.productId;
-      this.price = 29.99;
+      let productsObj: any = this.activeRoute.snapshot.data['prodData'];
+      console.log(this.productId + '   ' + productsObj);
+      this.name = productsObj[this.productId].name;
+      this.price = productsObj[this.productId].variantIds[0].price;
       this.img = 'assets/img/new.png';
-      this.text =  'Trial text and product description, maybe with reviews?';
+      this.text =  productsObj[this.productId].description.toString();
     });
   }
 }
