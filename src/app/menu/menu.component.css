@@ -1,5 +1,5 @@
 :host {
-  background: #801a1a;
+  background: #cc1c1c;
   display: none;
   color: #fff;
   position: fixed;
@@ -19,4 +19,16 @@ ul {
   font-weight: 400;
   padding-top: 50px;
   list-style: none;
+}
+
+.category {
+  border: ridge;
+  border-color: #811b1b;
+  background: #ac2323;
+  padding: 10px;
+  text-align: center;
+}
+
+.category:hover{
+  background: #811b1b;
 }
