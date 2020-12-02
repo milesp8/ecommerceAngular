@@ -1,12 +1,12 @@
 <ul #grid class="grid-container">
-    <li *ngFor="let item of itemArr">
-        <div class="grid-item">
-            <a>
-                <h3>{{item.name}}</h3>
-                <p>${{item.price}}</p>
-                <img class="images" src={{item.img}} alt="Product Image" width="400" height="400">
-            </a>
-        </div>
-        <p>{{item.text}}</p>
-    </li>
+  <li>
+    <div class="grid-item">
+      <a>
+        <h3>{{item.name}}</h3>
+        <p>${{item.price}}</p>
+        <img class="images" src={{item.img}} alt="Product Image" width="400" height="400">
+      </a>
+    </div>
+    <p>{{item.text}}</p>
+  </li>
 </ul>
