@@ -23,7 +23,7 @@ export class CartComponent implements OnInit {
     }
   }
   goCheckout(){
-    window.location.replace('/checkout');
+    window.location.replace('/payment');
   }
 
   ngOnInit(): void {}
