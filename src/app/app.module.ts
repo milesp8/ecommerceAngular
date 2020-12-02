@@ -10,6 +10,10 @@ import { CartComponent } from './cart/cart.component';
 import { AccountComponent } from './account/account.component';
 import { ProductsComponent } from './products/products.component';
 
+import { HttpClientModule } from '@angular/common/http'
+import { AppServiceService } from './app-service.service'
+import { ProductsGuard, CategoriesGuard } from './guards/resolve.guard'
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,9 +26,14 @@ import { ProductsComponent } from './products/products.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [
+    AppServiceService, 
+    ProductsGuard,
+    CategoriesGuard
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
