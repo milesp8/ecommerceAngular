@@ -34,8 +34,6 @@ export class AppComponent implements OnInit {
     )*/
 
   }
-  
-
   /*
   getDataFromApi(){
     this.service.getData().subscribe((response) => {
@@ -45,4 +43,21 @@ export class AppComponent implements OnInit {
     })
   }*/
 
+
+  toggleMenu() {
+    var m = document.getElementById('menu');
+    if (m.style.display === "none") {
+      m.style.display = "block";
+    } else {
+      m.style.display = "none";
+    }
+  }
+  toggleCart() {
+    var m = document.getElementById('cart');
+    if (m.style.display === "none") {
+      m.style.display = "block";
+    } else {
+      m.style.display = "none";
+    }
+  }
 }

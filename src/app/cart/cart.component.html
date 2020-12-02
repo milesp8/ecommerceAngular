@@ -1,1 +1,23 @@
-<p>cart works!</p>
+<div #cart class="scrollable">
+<div class="button-container">
+  <h2> Total: ${{total}}</h2>
+  <a routerLink="/payment"><button>Checkout</button></a>
+</div>
+
+<div>
+  <div class="space"></div>
+  <ul #grid class="grid-container">
+    <li *ngFor="let item of itemArr">
+      <a routerLink={{item.link}}>
+        <div class="grid-item">
+          <h3>{{item.name}}</h3>
+          <p>${{item.price}}</p>
+          <hr>
+          <img class="images" src={{item.img}} alt="Product Image" width="150" height="150">
+        </div>
+      </a>
+    </li>
+  </ul>
+  <div class="space"></div>
+</div>
+</div>

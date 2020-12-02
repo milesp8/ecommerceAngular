@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { AppServiceService } from '../app-service.service';
 
 @Component({
@@ -7,25 +7,24 @@ import { AppServiceService } from '../app-service.service';
   templateUrl: './products.component.html',
   styleUrls: ['./products.component.css']
 })
+
 export class ProductsComponent implements OnInit {
+  productId: string;
+  name: string;
+  price: number;
+  img: string;
+  text: string;
+  constructor(private router: Router, private activeRoute: ActivatedRoute) {
 
-  itemArr: { name: string, price: number, img: string, link: string }[] = [];
-  constructor() {
-    const item = {
-      name: 'Product 1',
-      price: 29.99,
-      img: 'assets/img/new.png',
-      link: '/home',
-      text: "Trial text and product description, maybe with reviews?"
-    };
-    // tslint:disable-next-line: no-unused-expression
-    this.itemArr.push(item);
-
-    console.log(this.itemArr.length);
   }
 
   ngOnInit(): void {
+    this.activeRoute.paramMap.subscribe(params => {
+      this.productId = params.get('id');
+      this.name = 'Product ' + this.productId;
+      this.price = 29.99;
+      this.img = 'assets/img/new.png';
+      this.text =  'Trial text and product description, maybe with reviews?';
+    });
   }
-
 }
-

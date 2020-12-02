@@ -17,7 +17,7 @@ export class CatalogComponent implements OnInit {
         name: 'Product ' + i,
         price: 29.99,
         img: 'assets/img/new.png',
-        link: '/products'
+        link: '/products/' + i
       };
       // tslint:disable-next-line: no-unused-expression
       this.itemArr.push(item);

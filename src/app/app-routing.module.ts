@@ -7,6 +7,8 @@ import { CartComponent } from './cart/cart.component';
 import { AccountComponent } from './account/account.component';
 import {ProductsComponent } from './products/products.component';
 import { ProductsGuard, CategoriesGuard } from './guards/resolve.guard'
+import { PaymentComponent } from './payment/payment.component';
+
 
 const routes: Routes = [
   {path: 'catalog',
@@ -21,7 +23,8 @@ const routes: Routes = [
   {path: 'footer', component: FooterComponent},
   {path: '', redirectTo: 'home', pathMatch: 'full'},
   {path: 'home', component: HomeComponent},
-  {path: 'products', component: ProductsComponent}
+  {path: 'products/:id', component: ProductsComponent},
+  {path: 'payment', component: PaymentComponent}
 ];
 
 @NgModule({

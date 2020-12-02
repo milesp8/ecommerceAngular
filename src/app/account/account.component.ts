@@ -11,5 +11,22 @@ export class AccountComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  toggleProducts() {
+    var m = document.getElementById('prod');
+    if (m.style.display === "none") {
+      m.style.display = "block";
+    } else {
+      m.style.display = "none";
+    }
+  }
+  toggleOrders() {
+    var m = document.getElementById('ord');
+    if (m.style.display === "none") {
+      m.style.display = "block";
+    } else {
+      m.style.display = "none";
+    }
+  }
+  
 
 }

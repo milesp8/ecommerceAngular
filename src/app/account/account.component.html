@@ -1,1 +1,32 @@
 <p>account works!</p>
+<!--Welcome Section-->
+<section>
+    <h2>Welcome Administrator!</h2>
+</section>
+<!--End Welcome-->
+<!--Product Section-->
+<section>
+    <h2>Edit Products:</h2>
+    <button type="button" class="collapsible" (click)="toggleProducts()">Open Editor</button>
+    <div class="content" id="prod">
+        <div class="item">
+            <p>Name Here</p>
+            <hr>
+        </div> 
+    </div> 
+</section>
+<!--End PS-->
+<!--Order Section-->
+<section>
+    <h2>Edit Orders:</h2>
+    <button type="button" class="collapsible" (click)="toggleOrders()">Open Editor</button>
+    <div class="content" id="ord">
+        <div class="item">
+            <p>This is an Order</p>
+            <hr>
+            <p>The Name is here</p>
+            <span></span>
+            <p>Order Num Goes Here</p>
+        </div>
+    </div> 
+</section>
