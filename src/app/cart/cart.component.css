@@ -14,6 +14,9 @@
 
 .button-container {
   text-align: center;
+  position: fixed;
+  background: #AA0A0A;
+  width: 13%;
 }
 button{
   size: 100;
