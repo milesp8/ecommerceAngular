@@ -22,6 +22,9 @@ export class CartComponent implements OnInit {
       this.total += item.price;
     }
   }
+  goCheckout(){
+    window.location.replace('/checkout');
+  }
 
   ngOnInit(): void {}
 
