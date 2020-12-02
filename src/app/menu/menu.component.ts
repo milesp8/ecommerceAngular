@@ -10,6 +10,7 @@ export class MenuComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    document.getElementById('menu').style.display = 'none';
   }
 
 }

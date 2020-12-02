@@ -1,6 +1,7 @@
+<div #cart>
 <div class="button-container">
   <h2> Total: ${{total}}</h2>
-  <button (click)="goCheckout()">Checkout</button>
+  <a routerLink="/payment"><button>Checkout</button></a>
 </div>
 
 <div class="scrollable">
@@ -17,4 +18,5 @@
     </li>
   </ul>
   <div class="space"></div>
+</div>
 </div>
