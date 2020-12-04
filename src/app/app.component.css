@@ -346,6 +346,10 @@
     }
   }
 
+  .pointerCursor {
+    cursor: pointer;
+  }
+
   @media screen and (max-width: 575px) {
     svg#rocket-smoke {
       display: none;

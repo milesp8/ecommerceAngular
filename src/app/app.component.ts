@@ -1,5 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { AppServiceService } from './app-service.service';
+//import { AuthGuard } from './guards/auth.guard'
+import { AuthService } from './auth.service'
+import { Router } from '@angular/router';
+
+
 
 @Component({
   selector: 'app-root',
@@ -9,7 +14,7 @@ import { AppServiceService } from './app-service.service';
 export class AppComponent implements OnInit {
   title = 'ecommerceAngular';
 
-  constructor (private service : AppServiceService) {
+  constructor (private service : AppServiceService, private authservice: AuthService, private router: Router) {
 
   }
 
@@ -43,6 +48,13 @@ export class AppComponent implements OnInit {
     })
   }*/
 
+  toggleDashboard() {
+    if (this.authservice.loggedIn()) {
+      this.router.navigate(['/account'])
+    } else {
+      this.router.navigate(['/login'])
+    }
+  }
 
   toggleMenu() {
     var m = document.getElementById('menu');

@@ -19,6 +19,8 @@ import { ProductsGuard, CategoriesGuard } from './guards/resolve.guard';
 import { EditProductsComponent } from './edit-products/edit-products.component';
 import { EditOrdersComponent } from './edit-orders/edit-orders.component';
 import { EditCategoriesComponent } from './edit-categories/edit-categories.component'
+import { AuthGuard } from './guards/auth.guard';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +36,7 @@ import { EditCategoriesComponent } from './edit-categories/edit-categories.compo
     EditProductsComponent,
     EditOrdersComponent,
     EditCategoriesComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
@@ -43,7 +46,8 @@ import { EditCategoriesComponent } from './edit-categories/edit-categories.compo
   providers: [
     AppServiceService, 
     ProductsGuard,
-    CategoriesGuard
+    CategoriesGuard,
+    AuthGuard
   ],
   bootstrap: [AppComponent]
 })

@@ -1,0 +1,19 @@
+<form id='loginForm'>  
+    <div class="container">
+      <label for="email"><b>Email:</b></label>
+      <input id="emailId" type="email" placeholder="Enter Email" name="email" required>
+  
+      <label for="psw"><b>Password:</b></label>
+      <input id="pswId" type="password" placeholder="Enter Password" name="psw" required autocomplete="off">
+  
+      <button id="loginBtn" (click)="userlogin()" type="button">Login</button>
+      <label>
+        <input type="checkbox" checked="checked" name="remember"> Remember me
+      </label>
+    </div>
+
+    <div>
+        <h5 id="loginStatId" style="color:red; font-size: 1.2em;">{{status}}</h5>
+    </div>
+</form>
+

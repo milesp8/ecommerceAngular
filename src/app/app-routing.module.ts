@@ -11,6 +11,8 @@ import { PaymentComponent } from './payment/payment.component';
 import { EditOrdersComponent } from './edit-orders/edit-orders.component';
 import { EditProductsComponent } from './edit-products/edit-products.component';
 import { EditCategoriesComponent } from './edit-categories/edit-categories.component';
+import { LoginComponent } from './login/login.component';
+import { AuthGuard } from './guards/auth.guard';
 
 
 const routes: Routes = [
@@ -21,7 +23,14 @@ const routes: Routes = [
     }
   },
   {path: 'cart', component: CartComponent},
-  {path: 'account', component: AccountComponent},
+
+  {path: 'login', 
+    component: LoginComponent
+  },
+  {path: 'account', 
+    component: AccountComponent,
+    canActivate: [AuthGuard]
+  },
   {path: 'footer', component: FooterComponent},
   {path: '', redirectTo: 'home', pathMatch: 'full'},
   {path: 'home', component: HomeComponent},
@@ -30,8 +39,14 @@ const routes: Routes = [
     prodData: ProductsGuard
   }},
   {path: 'payment', component: PaymentComponent},
-  {path: 'editorders', component: EditOrdersComponent},
-  {path: 'editproducts', component: EditProductsComponent},
+  {path: 'editorders', 
+    component: EditOrdersComponent,
+    canActivate: [AuthGuard]
+  },
+  {path: 'editproducts', 
+    component: EditProductsComponent,
+    canActivate: [AuthGuard]
+  },
   {path: 'editcategories', component: EditCategoriesComponent}
 ];
 

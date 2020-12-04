@@ -11,17 +11,7 @@ import { AppServiceService } from '../app-service.service';
 export class CatalogComponent implements OnInit {
  itemArr: {name: string, price: number, img: string, link: string, description: string} [] = [];
   constructor(private appservice: AppServiceService, private activatedRoute: ActivatedRoute) {
-    /*
-    for (let i = 1; i < 20; i++){
-      const item = {
-        name: 'Product ' + i,
-        price: 29.99,
-        img: 'assets/img/new.png',
-        link: '/products/' + i
-      };
-      // tslint:disable-next-line: no-unused-expression
-      this.itemArr.push(item);
-    }*/
+    
   }
 
   ngOnInit(): void {
@@ -33,6 +23,7 @@ export class CatalogComponent implements OnInit {
     // tslint:disable-next-line: forin
     for (const productIndex in productsObj) {
       const item: {name: string, price: number, img: string, link: string, description: string} = {
+        //_id: productsObj[productIndex]._id,
         name: productsObj[productIndex].name,
         price: productsObj[productIndex].variantIds[0].price,
         img: 'assets/img/new.png',
@@ -45,6 +36,21 @@ export class CatalogComponent implements OnInit {
 
       this.itemArr.push(item);
     }
+  }
+
+  async testFunction(prodObj: any, _id: Object) {
+    //let returnObj: any
+    console.log("Button clicked object passed: ", prodObj)
+    let returnObj: any
+    await this.appservice.specificProduct(_id).subscribe(
+      data => {
+        returnObj = data
+      }, error => { throw error}
+    )
+
+    console.log(returnObj)
+
+
   }
 
 }

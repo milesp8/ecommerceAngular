@@ -5,8 +5,16 @@
         <h3>{{item.name}}</h3>
         <p>${{item.price}}</p>
         <hr>
+        <button (click)=
+        "testFunction({
+          'name': item.name,
+          'price': item.price
+        }, item._id)">Show More</button>
         <img class="images" src={{item.img}} alt="Product Image" width="200" height="200">
       </div>
     </a>
   </li>
+
+  
+
 </ul>

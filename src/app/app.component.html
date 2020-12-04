@@ -23,8 +23,8 @@
   </form>
   </div>
   <div class="spacer"></div>
-  <img width="40" alt="Cart" (click)="toggleCart()" src="../assets/img/unocart.png" title="My Cart"/>
-  <a routerLink ="/account"><img width="40" alt="Acct" src="../assets/img/unoprofile.png" title="My Profile"/></a>
+  <img width="40" class="pointerCursor" alt="Cart" (click)="toggleCart()" src="../assets/img/unocart.png" title="My Cart"/>
+  <a (click)="toggleDashboard()" class="pointerCursor"><img width="40" alt="Acct" src="../assets/img/unoprofile.png" title="My Profile"/></a>
 
 </div>
 <!--End Toolbar-->
