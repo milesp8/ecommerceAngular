@@ -17,6 +17,9 @@ export class AccountComponent implements OnInit {
   goOrders() {
     window.location.replace("./editorders");
   }
+  goCategories(){
+    window.location.replace("./editcategories");
+  }
   
 
 }

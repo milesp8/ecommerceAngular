@@ -10,6 +10,7 @@ import { ProductsGuard, CategoriesGuard } from './guards/resolve.guard'
 import { PaymentComponent } from './payment/payment.component';
 import { EditOrdersComponent } from './edit-orders/edit-orders.component';
 import { EditProductsComponent } from './edit-products/edit-products.component';
+import { EditCategoriesComponent } from './edit-categories/edit-categories.component';
 
 
 const routes: Routes = [
@@ -30,7 +31,8 @@ const routes: Routes = [
   }},
   {path: 'payment', component: PaymentComponent},
   {path: 'editorders', component: EditOrdersComponent},
-  {path: 'editproducts', component: EditProductsComponent}
+  {path: 'editproducts', component: EditProductsComponent},
+  {path: 'editcategories', component: EditCategoriesComponent}
 ];
 
 @NgModule({
