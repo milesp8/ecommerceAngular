@@ -25,23 +25,25 @@ export class CatalogComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    console.log(this.activatedRoute.snapshot.data['prodData'])
-    //console.log(this.activatedRoute.snapshot.data['categoryData'])
+    console.log(this.activatedRoute.snapshot.data.prodData);
+    // console.log(this.activatedRoute.snapshot.data['categoryData'])
 
-    let productsObj: any = this.activatedRoute.snapshot.data['prodData']
+    const productsObj: any = this.activatedRoute.snapshot.data.prodData;
 
-    for (let productIndex in productsObj) {
-      const item = {
+    // tslint:disable-next-line: forin
+    for (const productIndex in productsObj) {
+      const item: {name: string, price: number, img: string, link: string, description: string} = {
         name: productsObj[productIndex].name,
         price: productsObj[productIndex].variantIds[0].price,
         img: 'assets/img/new.png',
         link: '/products/' + productIndex,
         description: productsObj[productIndex].description.toString()
-      }
 
-      console.log(productsObj[productIndex].description)
+      };
+      if (item.name.length > 30) { (item.name = item.name.substr(0, 30) + '...'); }
+      // console.log(productsObj[productIndex].description);
 
-      this.itemArr.push(item)
+      this.itemArr.push(item);
     }
   }
 
