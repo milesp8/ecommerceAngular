@@ -1,32 +1,21 @@
-<p>account works!</p>
 <!--Welcome Section-->
 <section>
     <h2>Welcome Administrator!</h2>
+    <p>Administrators shall only edit these properties if there is a request from a customer<br>or from a manufacturer or material provider.</p>
 </section>
 <!--End Welcome-->
+<hr>
 <!--Product Section-->
 <section>
     <h2>Edit Products:</h2>
-    <button type="button" class="collapsible" (click)="toggleProducts()">Open Editor</button>
-    <div class="content" id="prod">
-        <div class="item">
-            <p>Name Here</p>
-            <hr>
-        </div> 
-    </div> 
+    <p>Change Product Information, such as quantity, price, name, and variant information.<br>Product Information should only be changed in the case of external causes by admin</p>
+    <button type="button" class="collapsible" (click)="goProducts()">Open Editor</button> 
 </section>
 <!--End PS-->
+<hr>
 <!--Order Section-->
 <section>
     <h2>Edit Orders:</h2>
-    <button type="button" class="collapsible" (click)="toggleOrders()">Open Editor</button>
-    <div class="content" id="ord">
-        <div class="item">
-            <p>This is an Order</p>
-            <hr>
-            <p>The Name is here</p>
-            <span></span>
-            <p>Order Num Goes Here</p>
-        </div>
-    </div> 
+    <p>Change Order Information, such as user mistakes or cancelling an order.<br>Order Information should only be changed in the case of external causes by admin</p>
+    <button type="button" class="collapsible" (click)="goOrders()">Open Editor</button>
 </section>

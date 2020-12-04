@@ -8,6 +8,8 @@ import { AccountComponent } from './account/account.component';
 import {ProductsComponent } from './products/products.component';
 import { ProductsGuard, CategoriesGuard } from './guards/resolve.guard'
 import { PaymentComponent } from './payment/payment.component';
+import { EditOrdersComponent } from './edit-orders/edit-orders.component';
+import { EditProductsComponent } from './edit-products/edit-products.component';
 
 
 const routes: Routes = [
@@ -26,7 +28,9 @@ const routes: Routes = [
   resolve: {
     prodData: ProductsGuard
   }},
-  {path: 'payment', component: PaymentComponent}
+  {path: 'payment', component: PaymentComponent},
+  {path: 'editorders', component: EditOrdersComponent},
+  {path: 'editproducts', component: EditProductsComponent}
 ];
 
 @NgModule({

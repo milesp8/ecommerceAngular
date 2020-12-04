@@ -15,7 +15,9 @@ import { RouterModule } from '@angular/router';
 
 import { HttpClientModule } from '@angular/common/http'
 import { AppServiceService } from './app-service.service'
-import { ProductsGuard, CategoriesGuard } from './guards/resolve.guard'
+import { ProductsGuard, CategoriesGuard } from './guards/resolve.guard';
+import { EditProductsComponent } from './edit-products/edit-products.component';
+import { EditOrdersComponent } from './edit-orders/edit-orders.component'
 
 @NgModule({
   declarations: [
@@ -28,6 +30,8 @@ import { ProductsGuard, CategoriesGuard } from './guards/resolve.guard'
     ProductsComponent,
     MenuComponent,
     PaymentComponent,
+    EditProductsComponent,
+    EditOrdersComponent,
   ],
   imports: [
     BrowserModule,
