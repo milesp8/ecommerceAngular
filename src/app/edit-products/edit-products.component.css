@@ -18,3 +18,19 @@
     background-color: rgb(121, 121, 121);
     padding: 10px;
 }
+
+.collapsible{
+    background-color: rgb(102, 101, 101);
+    padding: 10px;
+    cursor: pointer;
+    text-align: center;
+}
+.collapsible:hover{
+    background-color: rgb(145, 145, 145);
+}
+.content{
+    padding: 5px;
+    display: none;
+    overflow: hidden;
+    background-color: #f1f1f1;
+}

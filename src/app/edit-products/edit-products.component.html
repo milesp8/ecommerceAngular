@@ -7,6 +7,14 @@
             <input type="text" id="pname" name="pname"> <br> <br>
             <label for="pprice">Change Product Price:</label>
             <input type="number" min="0" value="999" id="pprice" name="pprice"> <br> <br>
+            <button type="button" class="collapsible" (click)=toggleCollapse()>Edit Categories</button>
+            <div class="content">
+                <label class="container">One
+                    <input type="checkbox" checked="checked">
+                    <span class="checkmark"></span>
+                </label>
+            </div>
+            <br><br>
             <button>Remove Product!</button>
         </div>
     </div>
