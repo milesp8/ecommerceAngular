@@ -1,12 +1,12 @@
 .list-container{
     display: grid;
     background-color: rgba(220, 220, 235, 1);
-    grid-template-columns: auto auto auto;
+    grid-template-columns: auto;
     padding: 5px;
     grid-column-gap: 150px;
     grid-row-gap: 20px;
 }
-.list-item{
+li{
     background-color: rgb(155, 155, 155);
     border: solid;
     border-color: black;

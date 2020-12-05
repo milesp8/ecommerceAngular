@@ -41,11 +41,14 @@ const routes: Routes = [
   {path: 'payment', component: PaymentComponent},
   {path: 'editorders', 
     component: EditOrdersComponent,
-    canActivate: [AuthGuard]
+    canActivate: [AuthGuard],
   },
   {path: 'editproducts', 
     component: EditProductsComponent,
-    canActivate: [AuthGuard]
+    canActivate: [AuthGuard],
+    resolve: {
+      prodData: ProductsGuard
+    }
   },
   {path: 'editcategories', component: EditCategoriesComponent}
 ];

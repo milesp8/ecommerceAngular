@@ -1,12 +1,13 @@
+<h3>All Items:</h3>
 <ul #list class="list-container">
-    <div class="list-item">
-        <p>Sample Text Here</p>
+    <li *ngFor="let prod of prodArr">
+        <h1>Product: {{prod.name}}</h1>
         <div class="item-editor">
-            <p>Here one will edit the item's properties</p>
+            <p>Change {{prod.item}}'s properties</p>
             <label for="pname">Change Product Name:</label>
-            <input type="text" id="pname" name="pname"> <br> <br>
+            <input type="text" id="pname" name="pname" value={{prod.name}}> <br> <br>
             <label for="pprice">Change Product Price:</label>
-            <input type="number" min="0" value="999" id="pprice" name="pprice"> <br> <br>
+            <input type="number" min="0" value={{prod.price}} id="pprice" name="pprice"> <br> <br>
             <button type="button" class="collapsible" (click)=toggleCollapse()>Edit Categories</button>
             <div class="content">
                 <label class="container">One
@@ -22,5 +23,5 @@
             <br><br>
             <button>Remove Product!</button>
         </div>
-    </div>
+    </li>
 </ul>
