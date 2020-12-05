@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AppServiceService } from '../app-service.service';
+import { CartManagerService } from '../cart-manager.service';
 
 @Component({
   selector: 'app-products',
@@ -14,7 +15,7 @@ export class ProductsComponent implements OnInit {
   price: number;
   img: string;
   text: string;
-  constructor(private router: Router, private activeRoute: ActivatedRoute) {
+  constructor(private router: Router, private activeRoute: ActivatedRoute, private cartManager: CartManagerService) {
 
   }
 
@@ -28,5 +29,14 @@ export class ProductsComponent implements OnInit {
       this.img = 'assets/img/new.png';
       this.text =  productsObj[this.productId].description.toString();
     });
+  }
+  addToCart(): void{
+      this.cartManager.addToCart({
+        name: this.name,
+        price: this.price,
+        img: this.img,
+        link: '/products/' + this.productId,
+        description: this.text
+      });
   }
 }

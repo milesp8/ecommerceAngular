@@ -2,8 +2,9 @@
   <li>
     <div class="grid-item">
       <a>
-        <h3>{{name}}</h3>
+        <h3>{{name}} <button #add (click)='addToCart()'>+</button></h3>
         <p>${{price}}</p>
+
         <img class="images" src={{img}} alt="Product Image" width="400" height="400">
       </a>
     </div>
