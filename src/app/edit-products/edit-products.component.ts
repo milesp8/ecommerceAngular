@@ -17,8 +17,8 @@ export class EditProductsComponent implements OnInit {
     const productsObj: any = this.activatedRoute.snapshot.data.prodData;
     //Utilize for loop from 
     for (const productIndex in productsObj) {
-      const prod: {name: string, price: number, img: string, link: string, description: string, categories: string[]} = {
-      //_id: productsObj[productIndex]._id,
+      const prod: {_id: any, name: string, price: number, img: string, link: string, description: string, categories: string[]} = {
+      _id: productsObj[productIndex]._id,
       name: productsObj[productIndex].name,
       price: productsObj[productIndex].variantIds[0].price,
       img: 'assets/img/new.png',
@@ -27,7 +27,6 @@ export class EditProductsComponent implements OnInit {
       categories: productsObj.categories, //Unsure of name used by categories
 
       };
-      if (prod.name.length > 30) { (prod.name = prod.name.substr(0, 30) + '...'); }
       this.prodArr.push(prod);
     }
   }

@@ -3,13 +3,14 @@
     <li *ngFor="let prod of prodArr">
         <h1>Product: {{prod.name}}</h1>
         <div class="item-editor">
-            <p>Change {{prod.item}}'s properties</p>
+            <h3>Product ID: {{prod._id}}</h3>
             <label for="pname">Change Product Name:</label>
-            <input type="text" id="pname" name="pname" value={{prod.name}}> <br> <br>
+            <input type="text" id="pname.{{prod.name}}" name="pname" value={{prod.name}} size="100"> <br> <br>
             <label for="pprice">Change Product Price:</label>
             <input type="number" min="0" value={{prod.price}} id="pprice" name="pprice"> <br> <br>
             <button type="button" class="collapsible" (click)=toggleCollapse()>Edit Categories</button>
             <div class="content">
+                <p>Categories: {{prod.categories}}</p>
                 <label class="container">One
                     <input type="checkbox" checked="checked">
                     <span class="checkmark"></span>
@@ -21,7 +22,8 @@
                 <p>Here variant info will go</p>
             </div>
             <br><br>
-            <button>Remove Product!</button>
+            <button>Remove Product!</button> <br><br>
+            <button>Update Product!</button>
         </div>
     </li>
 </ul>
