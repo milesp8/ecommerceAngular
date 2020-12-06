@@ -35,12 +35,11 @@ const routes: Routes = [
   },
   {path: 'footer', component: FooterComponent},
   {path: '', redirectTo: 'home', pathMatch: 'full'},
-  {path: 'home', 
-    component: HomeComponent,
-    resolve: {
-      catData: CategoriesGuard
-    }
-  },
+  {path: 'home', component: HomeComponent, 
+  resolve: {
+    categoryData: CategoriesGuard, 
+    prodData: ProductsGuard
+  }},
   {path: 'products/:id', component: ProductsComponent,
   resolve: {
     prodData: ProductsGuard

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router'
+import { AuthService } from '../auth.service'
 
 @Component({
   selector: 'app-account',
@@ -8,9 +9,19 @@ import { Router } from '@angular/router'
 })
 export class AccountComponent implements OnInit {
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private authservice: AuthService) { }
 
   ngOnInit(): void {
+
+    let resobj = this.authservice.loggedIn()
+
+    console.log(resobj)
+    
+    if(resobj == false) {
+      this.router.navigate(['/login'])
+    } else {
+      console.log("Token still not deleted")
+    }
   }
   goProducts() {
     window.location.replace("./editproducts");

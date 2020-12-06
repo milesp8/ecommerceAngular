@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { AppServiceService } from '../app-service.service'
+import { ICategory } from '../classes/category'
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -8,7 +11,8 @@ import { Component, OnInit } from '@angular/core';
 export class HomeComponent implements OnInit {
 
   dealArr: {name: string, price: number, img: string, link: string} [] = [];
-  constructor() {
+  public categories: any
+  constructor(private appservice: AppServiceService, private activatedRoute: ActivatedRoute) {
     for (let i = 1; i < 5; i++){
       const dealitem = {
         name: 'Product ' + i,
@@ -20,9 +24,19 @@ export class HomeComponent implements OnInit {
       this.dealArr.push(dealitem);
     }
   }
+  
 
+  ngOnInit() {
 
-  ngOnInit(): void {
+    /*
+    this.appservice.getCategory('5fc3ba1939919f84089b7407').subscribe(
+      data => {console.log(data) 
+        this.categories = data},
+      error => {console.log(error)}
+    )*/
+
+    console.log("Categories from activated route: ", this.activatedRoute.snapshot.data.categoryData)
+    console.log("Products from activated route: ", this.activatedRoute.snapshot.data.prodData)
   }
 
 }

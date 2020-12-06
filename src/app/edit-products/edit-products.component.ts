@@ -49,4 +49,9 @@ export class EditProductsComponent implements OnInit {
     } 
   }
 
+  // to reload the page when some change has been made
+  runInit() {
+    window.location.reload();  
+  }
+
 }
