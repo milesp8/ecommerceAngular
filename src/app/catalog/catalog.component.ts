@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { AppServiceService } from '../app-service.service';
+import { CartManagerService } from '../cart-manager.service';
 
 @Component({
   selector: 'app-catalog',
@@ -10,9 +11,7 @@ import { AppServiceService } from '../app-service.service';
 
 export class CatalogComponent implements OnInit {
  itemArr: {name: string, price: number, img: string, link: string, description: string} [] = [];
-  constructor(private appservice: AppServiceService, private activatedRoute: ActivatedRoute) {
-    
-  }
+  constructor(private appservice: AppServiceService, private activatedRoute: ActivatedRoute) {}
 
   ngOnInit(): void {
     console.log(this.activatedRoute.snapshot.data.prodData);

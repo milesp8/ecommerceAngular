@@ -16,15 +16,19 @@
   text-align: center;
   position: fixed;
   background: #AA0A0A;
-  width: 13%;
+  left: 100;
+  top: 60px;
+  right: 0;
+  width: 20%;
+  min-width: 250px;
+  min-height: 100px;
 }
+
 button{
-  size: 100;
-  padding: 15px 32px;
   background-color: #AA0A0A;
   color: white;
   font-size: 16px;
-  margin: 4px 2px;
+  text-align: center;
 }
 
 h3{
@@ -65,7 +69,7 @@ ul {
   top: 60px;
   right: 0;
   bottom: 0;
-  width: 10%;
+  width: 20%;
   min-width: 250px;
   z-index: 9999;
   font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;

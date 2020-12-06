@@ -1,11 +1,8 @@
 <div #cart class="scrollable">
-<div class="button-container">
-  <h2> Total: ${{total}}</h2>
-  <button (click)="addToCart()">Add to Cart</button>
-  <a routerLink="/payment"><button>Checkout</button></a>
-</div>
-
-<div>
+  <div class="button-container">
+    <h2> Total: ${{cartManager.getTotal()}}</h2>
+    <a routerLink="/payment"><button>Checkout</button></a>
+  </div>
   <div class="space"></div>
   <ul #grid class="grid-container">
     <li *ngFor="let item of itemArr">
@@ -20,5 +17,4 @@
     </li>
   </ul>
   <div class="space"></div>
-</div>
 </div>
