@@ -10,16 +10,32 @@
             <input type="number" min="0" value={{prod.price}} id="pprice" name="pprice"> <br> <br>
             <button type="button" class="collapsible" (click)=toggleCollapse()>Edit Categories</button>
             <div class="content">
-                <p>Categories: {{prod.categories}}</p>
-                <label class="container">One
-                    <input type="checkbox" checked="checked">
-                    <span class="checkmark"></span>
-                </label>
+                <p>{{prod.name}} categories:</p>
+                <ul #list class="list-container">
+                    <li *ngFor="let cat of prod.categories">
+                        <label class="container">{{cat}}
+                            <input type="checkbox" checked="checked">
+                            <span class="checkmark"></span>
+                        </label>
+                    </li>
+                </ul>
             </div>
             <br><br>
             <button type="button" class="collapsible" (click)=toggleCollapse()>Look Variants</button>
             <div class="content">
-                <p>Here variant info will go</p>
+                <p>{{prod.name}} variants:</p>
+                <ul #list class="list-container">
+                    <li *ngFor="let var of prod.variantIds">
+                        <p>Variant: NAME HERE</p>
+                        <label class="container">Change Variant Name
+                            <input type="text" size="80">
+                        </label>
+                        <label class="container">Change Variant Price
+                            <input type="number">
+                        </label>
+                        <button>Remove Variant!</button>
+                    </li>
+                </ul>
             </div>
             <br><br>
             <button>Remove Product!</button> <br><br>

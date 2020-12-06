@@ -17,14 +17,15 @@ export class EditProductsComponent implements OnInit {
     const productsObj: any = this.activatedRoute.snapshot.data.prodData;
     //Utilize for loop from 
     for (const productIndex in productsObj) {
-      const prod: {_id: any, name: string, price: number, img: string, link: string, description: string, categories: string[]} = {
+      const prod: {_id: any, name: string, price: number, img: string, link: string, description: string, categories: string[], variantIds: any} = {
       _id: productsObj[productIndex]._id,
       name: productsObj[productIndex].name,
       price: productsObj[productIndex].variantIds[0].price,
       img: 'assets/img/new.png',
       link: '/products/' + productIndex,
       description: productsObj[productIndex].description.toString(),
-      categories: productsObj.categories, //Unsure of name used by categories
+      categories: productsObj[productIndex].categories, //Unsure of name used by categories
+      variantIds: productsObj[productIndex].variantIds,
 
       };
       this.prodArr.push(prod);
