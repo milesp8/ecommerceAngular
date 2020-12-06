@@ -19,6 +19,7 @@ export class CartManagerService {
 
   clearCart(): {name: string, price: number, img: string, link: string, description: string}[] {
     this.items = [];
+    this.total = 0;
     return this.items;
   }
 
