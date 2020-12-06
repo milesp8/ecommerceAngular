@@ -11,6 +11,7 @@ export class CartManagerService {
   addToCart(product: {name: string, price: number, img: string, link: string, description: string}): void {
     this.items.push(product);
     this.total += product.price;
+    this.total = Math.round(this.total * 100) / 100;
   }
 
   getItems(): {name: string, price: number, img: string, link: string, description: string}[] {
