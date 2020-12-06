@@ -15,6 +15,15 @@
             </a>
           </div>
         </li>
-      </ul>
+    </ul> 
+
+    <tr *ngFor="let cat of categories">
+      <td>{{cat._id}}</td>
+      <td>{{cat.image}}</td>
+      <td>{{cat.products}}</td>
+      <td>{{cat.name}}</td>
+    </tr>
+
+    
 </div>
 <!--End Deals Section-->

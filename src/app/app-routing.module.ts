@@ -33,7 +33,11 @@ const routes: Routes = [
   },
   {path: 'footer', component: FooterComponent},
   {path: '', redirectTo: 'home', pathMatch: 'full'},
-  {path: 'home', component: HomeComponent},
+  {path: 'home', component: HomeComponent, 
+  resolve: {
+    categoryData: CategoriesGuard, 
+    prodData: ProductsGuard
+  }},
   {path: 'products/:id', component: ProductsComponent,
   resolve: {
     prodData: ProductsGuard

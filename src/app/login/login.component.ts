@@ -36,6 +36,7 @@ export class LoginComponent implements OnInit {
         'password': password
       }).subscribe(
         res => {
+          console.log("LOGGED IN")
           console.log(res)
           this.status = ''
           localStorage.setItem('token', res.token)

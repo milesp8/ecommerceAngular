@@ -1,14 +1,16 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http'
-import { Observable } from 'rxjs'
+import { Observable, throwError } from 'rxjs'
 import {catchError} from 'rxjs/operators'
+import { CanActivate, Router } from '@angular/router';
+
 
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private router: Router) { }
 
   loginUser(user) {
     //return this.http.post<User>('/api/login', {email, password})
@@ -36,12 +38,43 @@ export class AuthService {
   }
 
   // returns boolean for logged in or not
-  loggedIn() {
-    return !!localStorage.getItem('token')
+  loggedIn(): any {
+    
+    if (localStorage.getItem('token') == undefined) {
+      return false
+    } else {
+      this.checktoken().subscribe((data) => {
+        console.log("Logged in true")
+        //this.router.navigate(['/home'])
+        return true
+      }, (error) => {
+        localStorage.removeItem('token')
+        console.log("REMOVED TOKEN")
+        this.router.navigate(['/login'])
+        return false
+      })
+    } 
+    
+    
+    //return !!localStorage.getItem('token')
+  }
+  
+
+  checktoken() {
+    console.log("Bearer "+localStorage.getItem('token'))
+    return this.http.post<any>('/api/auth', {}, {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        Authorization: "Bearer "+localStorage.getItem('token') 
+      })
+    })
+    .pipe(
+      catchError(this.handleError)
+    );
   }
 
-  private handleError(error: any): Promise<any> {
-    console.error('An error occurred', error); // for demo purposes only
-    return Promise.reject(error.message || error);
+  private handleError(error) {
+    console.log("INVALID TOKEN: ", localStorage.getItem('token'))
+    return throwError(error.message || "Internal Error")
   }
 }
