@@ -19,8 +19,10 @@ const routes: Routes = [
   {path: 'catalog',
     component: CatalogComponent,
     resolve: {
-      prodData: ProductsGuard
-    }
+      prodData: ProductsGuard,
+      catData: CategoriesGuard,
+    },
+    
   },
   {path: 'cart', component: CartComponent},
 
@@ -33,7 +35,12 @@ const routes: Routes = [
   },
   {path: 'footer', component: FooterComponent},
   {path: '', redirectTo: 'home', pathMatch: 'full'},
-  {path: 'home', component: HomeComponent},
+  {path: 'home', 
+    component: HomeComponent,
+    resolve: {
+      catData: CategoriesGuard
+    }
+  },
   {path: 'products/:id', component: ProductsComponent,
   resolve: {
     prodData: ProductsGuard
@@ -50,7 +57,13 @@ const routes: Routes = [
       prodData: ProductsGuard
     }
   },
-  {path: 'editcategories', component: EditCategoriesComponent}
+  {path: 'editcategories', 
+    component: EditCategoriesComponent,
+    canActivate: [AuthGuard],
+    resolve: {
+      catData: CategoriesGuard
+    },
+  },
 ];
 
 @NgModule({

@@ -34,7 +34,7 @@
       left: 0;
       right: 0;
       height: 100px;
-      background-color: #cc1c1c;
+      background-color:#008B8B;
       color: white;
       font-weight: 600;
   }
@@ -93,7 +93,7 @@
     height: 60px;
     display: flex;
     align-items: center;
-    background-color: #cc1c1c;
+    background-color: #008B8B;
     color: white;
     font-weight: 600;
     position: fixed;
@@ -104,7 +104,7 @@
   }
   .toolbar img:hover{
       opacity: 0.8;
-      background-color: #a71818;
+      background-color: #005c5c;
   }
 
   .toolbar #twitter-logo {

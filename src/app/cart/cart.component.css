@@ -15,7 +15,7 @@
 .button-container {
   text-align: center;
   position: fixed;
-  background: #AA0A0A;
+  background: #004242;
   left: 100;
   top: 60px;
   right: 0;
@@ -25,7 +25,7 @@
 }
 
 button{
-  background-color: #AA0A0A;
+  background-color: #004242;
   color: white;
   font-size: 16px;
   text-align: center;
@@ -61,7 +61,7 @@ ul {
   height:100px
 }
 :host {
-  background: #801A1A;
+  background: #006868;
   display: none;
   color: #000;
   position: fixed;
