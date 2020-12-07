@@ -1,18 +1,18 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import {CatalogComponent} from './catalog/catalog.component';
-import { FooterComponent } from './footer/footer.component';
 import { HomeComponent } from './home/home.component';
 import { CartComponent } from './cart/cart.component';
 import { AccountComponent } from './account/account.component';
 import {ProductsComponent } from './products/products.component';
-import { ProductsGuard, CategoriesGuard } from './guards/resolve.guard'
+import { ProductsGuard, CategoriesGuard } from './guards/resolve.guard';
 import { PaymentComponent } from './payment/payment.component';
 import { EditOrdersComponent } from './edit-orders/edit-orders.component';
 import { EditProductsComponent } from './edit-products/edit-products.component';
 import { EditCategoriesComponent } from './edit-categories/edit-categories.component';
 import { LoginComponent } from './login/login.component';
 import { AuthGuard } from './guards/auth.guard';
+import { MenuComponent } from './menu/menu.component';
 
 
 const routes: Routes = [
@@ -33,7 +33,6 @@ const routes: Routes = [
     component: AccountComponent,
     canActivate: [AuthGuard]
   },
-  {path: 'footer', component: FooterComponent},
   {path: '', redirectTo: 'home', pathMatch: 'full'},
   {path: 'home', component: HomeComponent, 
   resolve: {

@@ -5,7 +5,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CatalogComponent } from './catalog/catalog.component';
 import { HomeComponent } from './home/home.component';
-import { FooterComponent } from './footer/footer.component';
 import { CartComponent } from './cart/cart.component';
 import { AccountComponent } from './account/account.component';
 import { ProductsComponent } from './products/products.component';
@@ -27,7 +26,6 @@ import { LoginComponent } from './login/login.component';
     AppComponent,
     CatalogComponent,
     HomeComponent,
-    FooterComponent,
     CartComponent,
     AccountComponent,
     ProductsComponent,

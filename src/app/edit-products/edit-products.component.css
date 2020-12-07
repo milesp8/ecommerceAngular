@@ -5,6 +5,7 @@
     padding: 5px;
     grid-column-gap: 150px;
     grid-row-gap: 20px;
+    list-style-type: none;
 }
 li{
     background-color: rgb(155, 155, 155);

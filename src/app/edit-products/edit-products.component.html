@@ -6,8 +6,6 @@
             <h3>Product ID: {{prod._id}}</h3>
             <label for="pname">Change Product Name:</label>
             <input type="text" id="pname.{{prod.name}}" name="pname" value={{prod.name}} size="100"> <br> <br>
-            <label for="pprice">Change Product Price:</label>
-            <input type="number" min="0" value={{prod.price}} id="pprice" name="pprice"> <br> <br>
             <button type="button" class="collapsible" (click)=toggleCollapse()>Edit Categories</button>
             <div class="content">
                 <p>{{prod.name}} categories:</p>
