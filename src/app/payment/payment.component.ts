@@ -79,8 +79,19 @@ export class PaymentComponent implements OnInit {
         let items = this.cartManager.getItems();
         let deliverydate = 0;
         let order = { name: name, email: email, address: address, total: total, items: items, deliverydate: deliverydate }
-        this.appService.getAllProducts().forEach(a => console.log(a));
-        this.appService.addOrder(order);
+        
+        this.appService.getAllProducts().subscribe((data) => {
+          console.log(data)
+        }, (error) => {
+          console.log("Error: ", error)
+        })
+        
+        this.appService.addOrder(order).subscribe((data) => {
+          console.log(data)
+        }, (error) => {
+          console.log(error)
+        }
+        );
         console.log(this.appService.getAllOrders()); 
       }
     }
