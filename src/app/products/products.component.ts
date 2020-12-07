@@ -15,6 +15,8 @@ export class ProductsComponent implements OnInit {
   price: number;
   img: string;
   text: string;
+  variants = [];
+  variantNum = 0;
   constructor(private router: Router, private activeRoute: ActivatedRoute, private cartManager: CartManagerService) {
 
   }
@@ -23,9 +25,12 @@ export class ProductsComponent implements OnInit {
     this.activeRoute.paramMap.subscribe(params => {
       this.productId = params.get('id');
       let productsObj: any = this.activeRoute.snapshot.data['prodData'];
+      productsObj[this.productId].variantIds.forEach(element => {
+        this.variants.push(element);
+      });
       console.log(this.productId + '   ' + productsObj);
-      this.name = productsObj[this.productId].name;
-      this.price = productsObj[this.productId].variantIds[0].price;
+      this.name = productsObj[this.productId].name + ' (' + this.variants[this.variantNum].name + ')';
+      this.price = this.variants[this.variantNum].price;
       this.img = 'assets/img/new.png';
       this.text =  productsObj[this.productId].description.toString();
     });
