@@ -1,7 +1,7 @@
 <div #cart class="scrollable">
   <div class="button-container">
     <h2> Total: ${{cartManager.getTotal()}}</h2>
-    <a routerLink="/payment"><button (click)="toggleCart(); toggleToolbar();">Checkout</button></a>
+    <a routerLink="/payment"><button (click)="toggleCart()">Checkout</button></a>
   </div>
   <div class="space"></div>
   <ul #grid class="grid-container">
