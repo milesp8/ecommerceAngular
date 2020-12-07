@@ -16,3 +16,11 @@
 ul {
   list-style-type: none;
 }
+
+.add:active{
+  color: rgb(23, 207, 23) ;
+}
+
+.add{
+  border-radius: 10px;
+}

@@ -1,19 +1,36 @@
 .grid-container {
     display: grid;
-    background-color: rgba(220, 220, 235, 1);
-    grid-template-columns: auto auto auto;
-    padding: 20px;
-    grid-column-gap: 150px;
+    background-color: rgba(29, 204, 102, 0.425);
+    grid-template-columns: auto auto auto auto;
+    padding: 40px;
+    grid-column-gap: 25px;
     grid-row-gap: 100px;
+    border-radius: 20px;
+    border: solid;
 }
 .grid-deal-item {
     background-color: rgba(230, 230, 250, 0.7);
-    border: 1px solid rgba(0, 0, 0, 0.8);
+    border: 5px solid rgba(0, 0, 0, 0.8);
     padding: 15px;
     text-align: center;
+    width: 15em;
+    border: 1px solid #333;
+    box-shadow: 8px 8px 5px #444;
+    padding: 8px 12px;
+    background-image: linear-gradient(180deg, #fff, #ddd 40%, #ccc);
+}
+.grid-deal-item:hover{
+  transform: scale(1.1);
 }
 ul {
   list-style-type: none;
+}
+hr {
+  border: none;
+  height: 1px;
+  width: 100%;
+  color: #333;
+  background-color: #333;
 }
 .shadowbox {
   width: 15em;
@@ -21,4 +38,16 @@ ul {
   box-shadow: 8px 8px 5px #444;
   padding: 8px 12px;
   background-image: linear-gradient(180deg, #fff, #ddd 40%, #ccc);
+}
+.img-cont{
+  color: black;
+  border-radius: 20px;
+  border: solid;
+  padding: 5px;
+}
+h3{
+  color: black;
+}
+h4{
+  color:  rgb(0, 99, 41);
 }

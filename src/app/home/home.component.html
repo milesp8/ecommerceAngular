@@ -10,8 +10,11 @@
           <div class="grid-deal-item">
             <a routerLink={{dealitem.link}}>
               <h3>{{dealitem.name}}</h3>
-              <p>${{dealitem.price}}</p>
-              <img class="images" src={{dealitem.img}} alt="Product Image" width="100" height="100">
+              <h4>${{dealitem.price}}</h4>
+              <hr>
+              <div class="img-cont">
+                <img class="images" src={{dealitem.img}} alt="Product Image" width="100" height="100">
+              </div>          
             </a>
           </div>
         </li>
