@@ -1,10 +1,39 @@
-<p>Your order is...: ${{cartManager.getTotal()}}</p>
-<div><p>First Name<br><input type="text" id="firstname" placeholder=" Your first name" name="search"></p></div>
-<div><p>Last Name<br><input type="text" id="lastname" placeholder=" Your last name" name="search"></p></div>
-<div><p>Address Line 1<br><input type="text" id="address1" placeholder=" Your address line 1" name="search"></p></div>
-<div><p>Address Line 2<br><input type="text" id="address2" placeholder=" Your address line 2" name="search"></p></div>
-<div><p>Address Line 3<br><input type="text" id="address3" placeholder=" Your address line 3" name="search"></p></div>
-<div><p>Address Line 4<br><input type="text" id="address4" placeholder=" Your address line 4" name="search"></p></div>
-<div><p>Credit Card Number<br><input type="text" id="credit card number" placeholder=" Your credit card number" name="search"></p></div>
-<div><p>Credit Card Security Code<br><input type="text" id="credit card number" placeholder=" Your credit card security code" name="search"></p></div>
+<h3>Checkout</h3>
+<ul #list class="list-group">
+    <li *ngFor="let item of cartManager.getItems()">
+        <div class="grid-item">
+            <p>{{item.name}}: ${{item.price}}</p>
+        </div>
+    </li>
+</ul>
+<p>Your total is: ${{cartManager.getTotal()}}</p>
+<div>
+    <p>First Name<br><input type="text" id="firstname" placeholder=" Your first name" name="search"></p>
+</div>
+<div>
+    <p>Last Name<br><input type="text" id="lastname" placeholder=" Your last name" name="search"></p>
+</div>
+<div>
+    <p>Email Address<br><input type="text" id="email" placeholder=" Your email" name="search"></p>
+</div>
+<div>
+    <p>Address Line 1<br><input type="text" id="address1" placeholder=" Your address line 1" name="search"></p>
+</div>
+<div>
+    <p>Address Line 2<br><input type="text" id="address2" placeholder=" Your address line 2" name="search"></p>
+</div>
+<div>
+    <p>Address Line 3<br><input type="text" id="address3" placeholder=" Your address line 3" name="search"></p>
+</div>
+<div>
+    <p>Address Line 4<br><input type="text" id="address4" placeholder=" Your address line 4" name="search"></p>
+</div>
+<div>
+    <p>Credit Card Number<br><input type="text" id="credit card number" placeholder=" Your credit card number"
+            name="search"></p>
+</div>
+<div>
+    <p>Credit Card Security Code<br><input type="text" id="credit card number"
+            placeholder=" Your credit card security code" name="search"></p>
+</div>
 <div><button>Done</button></div>
