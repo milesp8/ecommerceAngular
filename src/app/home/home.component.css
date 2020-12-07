@@ -1,16 +1,21 @@
 .grid-container {
     display: grid;
-    background-color: rgba(220, 220, 235, 1);
-    grid-template-columns: auto auto auto;
+    background-color: rgba(29, 204, 102, 0.425);
+    grid-template-columns: auto auto auto auto;
     padding: 20px;
-    grid-column-gap: 150px;
+    grid-column-gap: 25px;
     grid-row-gap: 100px;
 }
 .grid-deal-item {
     background-color: rgba(230, 230, 250, 0.7);
-    border: 1px solid rgba(0, 0, 0, 0.8);
+    border: 5px solid rgba(0, 0, 0, 0.8);
     padding: 15px;
     text-align: center;
+    width: 15em;
+    border: 1px solid #333;
+    box-shadow: 8px 8px 5px #444;
+    padding: 8px 12px;
+    background-image: linear-gradient(180deg, #fff, #ddd 40%, #ccc);
 }
 ul {
   list-style-type: none;
