@@ -85,6 +85,10 @@
   bottom: -15px;
 }
 
+.hamburger:hover{
+  transform: scale(1.1);
+}
+
   .toolbar {
     position: absolute;
     top: 0;
@@ -97,6 +101,12 @@
     color: white;
     font-weight: 600;
     position: fixed;
+  }
+  .toolbar button{
+    border-radius: 5px;
+  }
+  .toolbar button:hover{
+    transform: scale(1.1);
   }
 
   .toolbar img {
