@@ -14,6 +14,7 @@ export class PaymentComponent implements OnInit {
 
 
   ngOnInit(): void {
+    this.toggleToolbar();
   }
 
   processCreditCard(): boolean { return true; }
@@ -77,7 +78,7 @@ export class PaymentComponent implements OnInit {
           + (document.getElementById("address3") as HTMLInputElement).value;
         let total = this.cartManager.getTotal();
         let items = this.cartManager.getItems();
-        let deliverydate = 0;
+        let deliverydate = "0";
         let order = { name: name, email: email, address: address, total: total, items: items, deliverydate: deliverydate }
         
         this.appService.getAllProducts().subscribe((data) => {

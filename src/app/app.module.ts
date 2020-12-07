@@ -20,6 +20,7 @@ import { EditOrdersComponent } from './edit-orders/edit-orders.component';
 import { EditCategoriesComponent } from './edit-categories/edit-categories.component'
 import { AuthGuard } from './guards/auth.guard';
 import { LoginComponent } from './login/login.component';
+import { PaysuccessComponent } from './paysuccess/paysuccess.component';
 
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import { LoginComponent } from './login/login.component';
     EditOrdersComponent,
     EditCategoriesComponent,
     LoginComponent,
+    PaysuccessComponent,
   ],
   imports: [
     BrowserModule,
