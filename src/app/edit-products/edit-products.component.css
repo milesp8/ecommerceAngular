@@ -35,3 +35,14 @@ li{
     overflow: hidden;
     background-color: #f1f1f1;
 }
+.img-button{
+    padding: 18px;
+    text-align: center;
+    background-color: rgbrgb(145, 145, 145);
+    border-style: dotted;
+    border-color:  rgb(102, 101, 101);
+    cursor: pointer;
+}
+.img-button:hover{
+    background-color: rgb(102, 101, 101);
+}
