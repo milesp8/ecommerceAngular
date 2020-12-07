@@ -22,40 +22,40 @@ const routes: Routes = [
       prodData: ProductsGuard,
       catData: CategoriesGuard,
     },
-    
+
   },
   {path: 'cart', component: CartComponent},
 
-  {path: 'login', 
+  {path: 'login',
     component: LoginComponent
   },
-  {path: 'account', 
+  {path: 'account',
     component: AccountComponent,
     canActivate: [AuthGuard]
   },
   {path: '', redirectTo: 'home', pathMatch: 'full'},
-  {path: 'home', component: HomeComponent, 
+  {path: 'home', component: HomeComponent,
   resolve: {
-    categoryData: CategoriesGuard, 
+    categoryData: CategoriesGuard,
     prodData: ProductsGuard
   }},
-  {path: 'products/:id', component: ProductsComponent,
+  {path: 'products/:id/:variant', component: ProductsComponent,
   resolve: {
     prodData: ProductsGuard
   }},
   {path: 'payment', component: PaymentComponent},
-  {path: 'editorders', 
+  {path: 'editorders',
     component: EditOrdersComponent,
     canActivate: [AuthGuard],
   },
-  {path: 'editproducts', 
+  {path: 'editproducts',
     component: EditProductsComponent,
     canActivate: [AuthGuard],
     resolve: {
       prodData: ProductsGuard
     }
   },
-  {path: 'editcategories', 
+  {path: 'editcategories',
     component: EditCategoriesComponent,
     canActivate: [AuthGuard],
     resolve: {
