@@ -23,24 +23,25 @@
             <div class="content">
                 <p>{{prod.name}} variants:</p>
                 <ul #list class="list-container">
-                    <li *ngFor="let var of prod.variantIds">
+                    <li *ngFor="let variant of prod.variantIds">
                         <p>Variant: NAME HERE</p>
                         <label class="container">Change Variant Name
-                            <input type="text" size="80">
+                            <input size="80" value={{variant.name}}>
                         </label>
                         <label class="container">Change Variant Price
-                            <input type="number" min="0">
+                            <input min="0" value={{variant.price}}>
                         </label>
                         <label class="container">Change Variant Quantity
-                            <input type="number" min="0">
+                            <input min="0" value={{variant.quantity}}>
                         </label>
+                    
                         <hr>
                         <p>Image Upload:</p>
                         <div class="img-button">Change Image</div>
                         <button>Confirm Submission</button>
                         <hr>
-                        <button>Remove Variant!</button>
-                        <button>Update Variant!</button>
+                        <button>Remove Variant</button>
+                        <button>Update Variant</button>
                     </li>
                     <p>Create New Variant:</p>
                     <li>
@@ -59,13 +60,13 @@
                         <div class="img-button">Choose Image</div>
                         <button>Confirm Submission</button>
                         <hr>
-                        <button>Add Variant!</button>
+                        <button>Add Variant</button>
                     </li>
                 </ul>
             </div>
             <br><br>
-            <button>Remove Product!</button> <br><br>
-            <button>Update Product!</button>
+            <button>Remove Product</button> <br><br>
+            <button>Update Product</button>
         </div>
     </li>
     <h2>Create a New Product</h2>
