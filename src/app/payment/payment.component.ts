@@ -81,6 +81,7 @@ export class PaymentComponent implements OnInit {
         let order = { name: name, email: email, address: address, total: total, items: items, deliverydate: deliverydate }
         this.appService.getAllProducts().forEach(a => console.log(a));
         this.appService.addOrder(order);
+        console.log(this.appService.getAllOrders()); 
       }
     }
   }
