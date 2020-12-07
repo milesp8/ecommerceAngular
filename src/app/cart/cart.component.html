@@ -6,14 +6,15 @@
   <div class="space"></div>
   <ul #grid class="grid-container">
     <li *ngFor="let item of itemArr">
-      <a routerLink={{item.link}}>
-        <div class="grid-item">
-          <h3>{{item.name}} <button class='remove'> X</button></h3>
+      <button class='remove'> X</button>
+      <div class="grid-item">
+        <a routerLink={{item.link}}>
+          <h3>{{item.name}} </h3>
           <p>${{item.price}}</p>
           <hr>
           <img class="images" src={{item.img}} alt="Product Image" width="150" height="150">
-        </div>
-      </a>
+        </a>
+      </div>
     </li>
   </ul>
   <div class="space"></div>
