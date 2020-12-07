@@ -1,12 +1,13 @@
+<div>
+  <div *ngFor="let v of variants ; index as i">
+    <a routerLink={{v.link}}>
+      <button>{{v.element.name}} ({{v.element.quantity}} in stock)</button>
+    </a>
+  </div>
+</div>
+
 <ul #grid class="grid-container">
-  <label for="variants">Choose a variant:</label>
-<select>
-  <option *ngFor="let v of variants"
-    [value]="v.name"
-    [attr.selected]="v.name==v.name ? true : null">
-  {{v.name}} (qty:{{v.quantity}})
-</option>
-</select>
+
   <li>
     <div class="grid-item">
       <a>
