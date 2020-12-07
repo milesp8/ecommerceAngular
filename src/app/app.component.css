@@ -63,7 +63,7 @@
   left: 18px;
   right: 18px;
   height: 8px;
-  background: #03ff03d2;
+  background: #fdfcfce8;
 }
 
 .hamburger span::before,
@@ -104,7 +104,7 @@
   }
   .toolbar img:hover{
       opacity: 0.8;
-      background-color: rgba(27, 230, 128, 0.623);
+      width: 50px;
   }
 
   .toolbar #twitter-logo {

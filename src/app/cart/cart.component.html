@@ -5,8 +5,8 @@
   </div>
   <div class="space"></div>
   <ul #grid class="grid-container">
-    <li *ngFor="let item of itemArr">
-      <button class='remove'> X</button>
+    <li *ngFor="let item of itemArr ; index as i">
+      <button class='remove' (click)='cartManager.removeItem(i)'> X</button>
       <div class="grid-item">
         <a routerLink={{item.link}}>
           <h3>{{item.name}} </h3>
