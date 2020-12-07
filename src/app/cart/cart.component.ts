@@ -17,4 +17,23 @@ ngOnInit(): void{
     document.getElementById('cart').style.display = 'none';
     this.itemArr = this.cartManager.getItems();
   }
+
+toggleCart() {
+  var m = document.getElementById('cart');
+  if (m.style.display === "none") {
+    m.style.display = "block";
+  } else {
+    m.style.display = "none";
+  }
 }
+
+toggleToolbar() {
+  var m = document.getElementById('header');
+  if (m.style.display === "none") {
+    m.style.display = "block";
+  } else {
+    m.style.display = "none";
+  }
+}
+}
+
