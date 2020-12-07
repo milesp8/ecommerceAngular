@@ -1,8 +1,9 @@
+<h1>Current Order List:</h1>
 <ul #list class="list-container">
-    <li>
-        <p>Sample Text Here</p>
+    <li *ngFor="let ord of orderArr">
+        <p>{{ord.name}}</p>
         <div class="item-editor">
-            <button>Remove Order!</button>
+            <button>Cancel Order!</button>
         </div>
     </li>
 </ul>
