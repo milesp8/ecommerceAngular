@@ -9,6 +9,7 @@ import { AppServiceService } from '../app-service.service';
 })
 export class EditProductsComponent implements OnInit {
 
+  selectedFile = null
   prodArr: {name: string, price: number, img: string, link: string, description: string, categories: string[]} [] = [];
   constructor(private appservice: AppServiceService, private activatedRoute: ActivatedRoute) { }
 
@@ -47,6 +48,11 @@ export class EditProductsComponent implements OnInit {
       }
     });
     } 
+  }
+
+  onFileSelected(event) {
+    this.selectedFile = event.target.files
+    console.log(this.selectedFile)
   }
 
   // to reload the page when some change has been made
