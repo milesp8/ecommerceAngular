@@ -30,7 +30,7 @@ toggleCart() {
 toggleToolbar() {
   var m = document.getElementById('header');
   if (m.style.display === "none") {
-    m.style.display = "block";
+    m.style.display = "flex";
   } else {
     m.style.display = "none";
   }
