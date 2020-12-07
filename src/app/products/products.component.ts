@@ -43,7 +43,7 @@ export class ProductsComponent implements OnInit {
         name: this.name,
         price: this.price,
         img: this.img,
-        link: '/products/' + this.productId,
+        link: '/products/' + this.productId + '/' + this.variantNum,
         description: this.text
       });
   }
