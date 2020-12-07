@@ -201,6 +201,8 @@ export class AppServiceService {
 
     // create an order using checkoutpage info (no params. Pass in order json object)
     addOrder(order: any): Observable<any> {
+      console.log("check");
+      console.log(order);
       return this.http.post('/api/addOrder', order, 
       {
         headers: new HttpHeaders({
