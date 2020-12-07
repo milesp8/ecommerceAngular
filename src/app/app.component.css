@@ -104,7 +104,7 @@
   }
   .toolbar img:hover{
       opacity: 0.8;
-      width: 50px;
+      transform: scale(1.2);
   }
 
   .toolbar #twitter-logo {

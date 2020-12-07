@@ -1,7 +1,10 @@
+<h1>Our Full Catalog:</h1>
 <ul #grid class="grid-container">
   <li *ngFor="let item of itemArr">
     <a routerLink={{item.link}}>
       <div class="grid-item">
+        <img class="images" src={{item.img}} alt="Product Image" width="200" height="200">
+        <hr>
         <h3>{{item.name}}</h3>
         <p>${{item.price}}</p>
         <hr>
@@ -10,7 +13,6 @@
           'name': item.name,
           'price': item.price
         }, item._id)">Show More</button>
-        <img class="images" src={{item.img}} alt="Product Image" width="200" height="200">
       </div>
     </a>
   </li>
