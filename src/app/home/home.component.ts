@@ -26,7 +26,10 @@ export class HomeComponent implements OnInit {
   }
 
 
+
+
   ngOnInit() {
+
 
     /*
     this.appservice.getCategory('5fc3ba1939919f84089b7407').subscribe(
