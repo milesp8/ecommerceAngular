@@ -104,7 +104,7 @@
   }
   .toolbar img:hover{
       opacity: 0.8;
-      background-color: #005c5c;
+      background-color: rgba(27, 230, 128, 0.623);
   }
 
   .toolbar #twitter-logo {
