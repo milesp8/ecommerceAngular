@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { AppServiceService } from '../app-service.service';
-import { CartManagerService } from '../cart-manager.service';
 
 @Component({
   selector: 'app-menu',

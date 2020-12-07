@@ -1,0 +1,31 @@
+li{
+    background-color: rgb(155, 155, 155);
+    border: solid;
+    border-color: black;
+    padding: 20px;
+}
+p {
+    font-size: 16px;
+    font-style: italic;
+}
+h2 {
+    font-size: 20px;
+    font-style: oblique;
+}
+.item-editor{
+    background-color: rgb(121, 121, 121);
+    padding: 10px;
+}
+.list-container{
+    display: grid;
+    background-color: rgba(220, 220, 235, 1);
+    grid-template-columns: auto;
+    padding: 5px;
+    grid-column-gap: 150px;
+    grid-row-gap: 20px;
+    list-style-type: none;
+}
+.item-editor{
+    background-color: rgb(121, 121, 121);
+    padding: 10px;
+}
