@@ -22,6 +22,7 @@ export class CartManagerService {
     const removedItem = this.items[index];
     this.items.splice(index, 1);
     this.total -= removedItem.price;
+    this.total = Math.round(this.total * 100) / 100;
     return removedItem;
   }
 
