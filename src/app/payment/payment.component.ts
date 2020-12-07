@@ -74,15 +74,14 @@ export class PaymentComponent implements OnInit {
           + "\n"
           + (document.getElementById("address2") as HTMLInputElement).value
           + "\n"
-          + (document.getElementById("address3") as HTMLInputElement).value
-          + "\n"
-          + (document.getElementById("address4") as HTMLInputElement).value;
+          + (document.getElementById("address3") as HTMLInputElement).value;
         let total = this.cartManager.getTotal();
         let items = this.cartManager.getItems();
         let deliverydate = 0;
         let order = { name: name, email: email, address: address, total: total, items: items, deliverydate: deliverydate }
         this.appService.getAllProducts().forEach(a => console.log(a));
         this.appService.addOrder(order);
+        console.log(this.appService.getAllOrders()); 
       }
     }
   }
