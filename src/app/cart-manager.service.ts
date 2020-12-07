@@ -18,6 +18,13 @@ export class CartManagerService {
     return this.items;
   }
 
+  removeItem(index: number): {name: string, price: number, img: string, link: string, description: string} {
+    const removedItem = this.items[index];
+    this.items.splice(index, 1);
+    this.total -= removedItem.price;
+    return removedItem;
+  }
+
   clearCart(): {name: string, price: number, img: string, link: string, description: string}[] {
     this.items = [];
     this.total = 0;
