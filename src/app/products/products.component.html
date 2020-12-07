@@ -1,7 +1,7 @@
-<div>
-  <div *ngFor="let v of variants ; index as i">
+<div class = 'horizontal'>
+  <div class='variant' *ngFor="let v of variants ; index as i">
     <a routerLink={{v.link}}>
-      <button>{{v.element.name}} ({{v.element.quantity}} in stock)</button>
+      <button class ='v-button'>{{v.element.name}} ({{v.element.quantity}} in stock)</button>
     </a>
   </div>
 </div>
