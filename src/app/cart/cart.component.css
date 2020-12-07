@@ -24,6 +24,10 @@
   min-height: 100px;
 }
 
+.remove{
+  background-color: red;
+}
+
 button{
   background-color: #004242;
   color: white;
@@ -33,6 +37,7 @@ button{
 
 h3{
   color: white;
+  font-size: medium;
 }
 
 h2{

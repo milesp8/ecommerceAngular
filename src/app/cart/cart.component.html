@@ -8,7 +8,7 @@
     <li *ngFor="let item of itemArr">
       <a routerLink={{item.link}}>
         <div class="grid-item">
-          <h3>{{item.name}}</h3>
+          <h3>{{item.name}} <button class='remove'> X</button></h3>
           <p>${{item.price}}</p>
           <hr>
           <img class="images" src={{item.img}} alt="Product Image" width="150" height="150">
