@@ -93,7 +93,9 @@ export class PaymentComponent implements OnInit {
           console.log(error)
         }
         );
-        console.log(this.appService.getAllOrders()); 
+        console.log(this.appService.getAllOrders());
+        this.cartManager.clearCart();
+        this.router.navigate(["/paysuccess"]);
       }
     }
   }
