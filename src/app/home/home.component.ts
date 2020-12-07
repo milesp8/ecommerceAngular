@@ -18,19 +18,19 @@ export class HomeComponent implements OnInit {
         name: 'Product ' + i,
         price: 19.99,
         img: 'assets/img/new.png',
-        link: '/products/' + i
+        link: '/products/' + i + '/0'
       };
       // tslint:disable-next-line: no-unused-expression
       this.dealArr.push(dealitem);
     }
   }
-  
+
 
   ngOnInit() {
 
     /*
     this.appservice.getCategory('5fc3ba1939919f84089b7407').subscribe(
-      data => {console.log(data) 
+      data => {console.log(data)
         this.categories = data},
       error => {console.log(error)}
     )*/

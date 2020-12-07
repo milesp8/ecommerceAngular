@@ -1,4 +1,13 @@
+<div>
+  <div *ngFor="let v of variants ; index as i">
+    <a routerLink={{v.link}}>
+      <button>{{v.element.name}} ({{v.element.quantity}} in stock)</button>
+    </a>
+  </div>
+</div>
+
 <ul #grid class="grid-container">
+
   <li>
     <div class="grid-item">
       <a>

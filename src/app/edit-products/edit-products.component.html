@@ -67,4 +67,50 @@
             <button>Update Product!</button>
         </div>
     </li>
+    <h2>Create a New Product</h2>
+    <li>
+        <div class="item-editor">
+            <label for="pname">Add Product Name:</label>
+            <input type="text" name="pname" size="100"> <br> <br>
+            <button type="button" class="collapsible" (click)=toggleCollapse()>Edit Categories</button>
+            <div class="content">
+                <p>Categories:</p>
+                <ul #list class="list-container">
+                    <li>
+                        <label class="container">Cat2
+                            <input type="checkbox" checked="checked">
+                            <span class="checkmark"></span>
+                        </label>
+                    </li>
+                </ul>
+            </div>
+            <br><br>
+            <button type="button" class="collapsible" (click)=toggleCollapse()>Look Variants</button>
+            <div class="content">
+                <ul #list class="list-container">
+                    <p>Create New Variant:</p>
+                    <li>
+                        <label class="container">New Variant's Name
+                            <input type="text" size="80">
+                        </label>
+                        <label class="container">Create Variant Price
+                            <input type="number" min="0">
+                        </label>
+                        <label class="container">Create Variant Quantity
+                            <input type="number" min="0">
+                        </label>
+                        <hr>
+                        <p>Image Upload:</p>
+                        <div class="img-button">Choose Image</div>
+                        <button>Confirm Submission</button>
+                        <hr>
+                        <button>Add Variant!</button>
+                    </li>
+                </ul>
+            </div>
+            <br><br>
+            <button>Remove Product!</button> <br><br>
+            <button>Update Product!</button>
+        </div>
+    </li>
 </ul>

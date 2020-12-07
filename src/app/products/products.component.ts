@@ -10,22 +10,30 @@ import { CartManagerService } from '../cart-manager.service';
 })
 
 export class ProductsComponent implements OnInit {
-  productId: string;
+  productId = 0;
   name: string;
   price: number;
   img: string;
   text: string;
+  variants = [];
+  variantNum = 0;
   constructor(private router: Router, private activeRoute: ActivatedRoute, private cartManager: CartManagerService) {
 
   }
 
   ngOnInit(): void {
     this.activeRoute.paramMap.subscribe(params => {
-      this.productId = params.get('id');
+      this.productId = Number.parseInt(params.get('id'), 0);
+      this.variantNum = Number.parseInt(params.get('variant'), 0);
       let productsObj: any = this.activeRoute.snapshot.data['prodData'];
-      console.log(this.productId + '   ' + productsObj);
-      this.name = productsObj[this.productId].name;
-      this.price = productsObj[this.productId].variantIds[0].price;
+      if (this.variants.length === 0){
+        productsObj[this.productId].variantIds.forEach((element, index) => {
+          this.variants.push({element, link: '/products/' + this.productId + '/' + index});
+        });
+    }
+      console.log(this.variants);
+      this.name = productsObj[this.productId].name + ' (' + this.variants[this.variantNum].element.name + ')';
+      this.price = this.variants[this.variantNum].element.price;
       this.img = 'assets/img/new.png';
       this.text =  productsObj[this.productId].description.toString();
     });
@@ -39,4 +47,5 @@ export class ProductsComponent implements OnInit {
         description: this.text
       });
   }
+  clearVariants(): void {this.variants = []; }
 }
