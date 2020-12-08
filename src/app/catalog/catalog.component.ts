@@ -22,11 +22,31 @@ export class CatalogComponent implements OnInit {
 
     this.activatedRoute.paramMap.subscribe(params => {
       this.category = params.get('category');
+      this.itemArr = [];
+      this.addAllItems();
       if (this.category != null){this.title = this.category; }
     });
 
-    const productsObj: any = this.activatedRoute.snapshot.data.prodData;
+    this.itemArr = [];
+    this.addAllItems();
+  }
+  async testFunction(prodObj: any, _id: Object) {
+    //let returnObj: any
+    console.log("Button clicked object passed: ", prodObj)
+    let returnObj: any
+    await this.appservice.specificProduct(_id).subscribe(
+      data => {
+        returnObj = data
+      }, error => { throw error}
+    )
 
+    console.log(returnObj)
+
+
+  }
+
+  addAllItems(): void{
+    const productsObj: any = this.activatedRoute.snapshot.data.prodData;
     // tslint:disable-next-line: forin
     for (const productIndex in productsObj) {
       const item: {name: string, price: number, img: string, link: string, description: string} = {
@@ -51,21 +71,6 @@ export class CatalogComponent implements OnInit {
       if (prodCats.has(this.category) || this.category == null)
           {this.itemArr.push(item); }
     }
-  }
-
-  async testFunction(prodObj: any, _id: Object) {
-    //let returnObj: any
-    console.log("Button clicked object passed: ", prodObj)
-    let returnObj: any
-    await this.appservice.specificProduct(_id).subscribe(
-      data => {
-        returnObj = data
-      }, error => { throw error}
-    )
-
-    console.log(returnObj)
-
-
   }
 
 }
