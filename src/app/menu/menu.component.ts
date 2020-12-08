@@ -12,7 +12,7 @@ export class MenuComponent implements OnInit {
   constructor(private appservice: AppServiceService, private activatedRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
-    document.getElementById('menu').style.display = 'none';
+    document.getElementById('menu').style.display = 'block';
     console.log(this.activatedRoute.snapshot.data.catData);
     const catsObj: any = this.activatedRoute.snapshot.data.catData;
 
@@ -24,6 +24,6 @@ export class MenuComponent implements OnInit {
     }
   }
 
-  
+
 
 }
