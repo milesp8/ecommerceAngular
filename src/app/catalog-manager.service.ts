@@ -22,7 +22,19 @@ export class CatalogManagerService {
     }
   }
   getCatArr(): {name: String}[] {
+    console.log("grabbing catArr");
     return this.catArr;
+  }
+
+  setCatArr(catsObj: any[]){
+
+    for (const catInd in catsObj) {
+      console.log("Found Cat");
+      const item: {name: String} = {
+        name: catsObj[catInd].name,
+      }
+      this.catArr.push(item);
+    }
   }
 
  

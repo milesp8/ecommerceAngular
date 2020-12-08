@@ -12,6 +12,7 @@ export class MenuComponent implements OnInit {
 
   ngOnInit(): void {
     document.getElementById('menu').style.display = 'none';
+    this.catManager.getCatArr();
   }
 
 

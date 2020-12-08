@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AppServiceService } from '../app-service.service'
 import { ICategory } from '../classes/category'
 import { ActivatedRoute } from '@angular/router';
+import { CatalogManagerService } from '../catalog-manager.service';
 
 @Component({
   selector: 'app-home',
@@ -12,7 +13,7 @@ export class HomeComponent implements OnInit {
 
   dealArr: {name: string, price: number, img: string, link: string} [] = [];
   public categories: any
-  constructor(private appservice: AppServiceService, private activatedRoute: ActivatedRoute) {
+  constructor(private appservice: AppServiceService, private activatedRoute: ActivatedRoute, public catManager: CatalogManagerService) {
     for (let i = 1; i < 5; i++){
       const dealitem = {
         name: 'Product ' + i,
@@ -39,6 +40,7 @@ export class HomeComponent implements OnInit {
     )*/
 
     console.log("Categories from activated route: ", this.activatedRoute.snapshot.data.categoryData)
+    this.catManager.setCatArr(this.activatedRoute.snapshot.data.categoryData);
     console.log("Products from activated route: ", this.activatedRoute.snapshot.data.prodData)
   }
 
