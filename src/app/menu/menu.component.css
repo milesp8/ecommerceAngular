@@ -12,7 +12,7 @@
   z-index: 9999;
   font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
 }
- 
+
 .list-container{
   display: grid;
   background-color:rgba(27, 230, 128, 0.623);
@@ -27,6 +27,7 @@
 .category {
   background: rgba(27, 230, 128, 0.623);
   padding: 10px;
+  color: black;
   text-align: center;
 }
 
@@ -45,6 +46,7 @@ h6{
   color: black;
   font-size: 20px;
 }
+<<<<<<< HEAD
 hr{
   border: none;
   height: 1px;
@@ -59,3 +61,5 @@ a{
 img{
   border-radius: 20px;
 }
+=======
+>>>>>>> 975308027bd8de6e5ba7dbc810f99a878976465b

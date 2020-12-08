@@ -12,6 +12,7 @@ import { CartManagerService } from '../cart-manager.service';
 export class CatalogComponent implements OnInit {
  itemArr: {name: string, price: number, img: string, link: string, description: string} [] = [];
  category = '';
+ title = 'Our Full Catalog';
   constructor(private appservice: AppServiceService, private activatedRoute: ActivatedRoute) {}
 
   ngOnInit(): void {
@@ -19,8 +20,9 @@ export class CatalogComponent implements OnInit {
     // console.log(this.activatedRoute.snapshot.data['categoryData'])
 
     this.activatedRoute.paramMap.subscribe(params => {
-      this.category = params.get('category')
-    })
+      this.category = params.get('category');
+      if (this.category != null){this.title = this.category; }
+    });
 
     const productsObj: any = this.activatedRoute.snapshot.data.prodData;
 

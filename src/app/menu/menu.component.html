@@ -1,9 +1,23 @@
 <ul #list class="list-container">
+<<<<<<< HEAD
   <div class="title"><hr><h6>Shop By Department</h6><hr></div>
+=======
+  <div class="title">
+    <h6>Shop By Department</h6>
+  </div>
+>>>>>>> 975308027bd8de6e5ba7dbc810f99a878976465b
   <li *ngFor="let cat of catManager.getCatArr()">
-    <div class="category">Go To {{cat.name}}</div>
+    <a routerLink="/catalog/{{cat.name}}">
+      <div class="category">Go To {{cat.name}}</div>
+    </a>
   </li>
+<<<<<<< HEAD
   <div class="title"><hr><h6>Our Information</h6><hr></div>
+=======
+  <div class="title">
+    <h6>Our Information</h6>
+  </div>
+>>>>>>> 975308027bd8de6e5ba7dbc810f99a878976465b
   <li>
     <div class="category" onclick="location.href='https://github.com/milesp8/ecommerceAngular';">About the Site's Frontend</div>
     <div class="category" onclick="location.href='https://github.com/milesp8/ecommerceproj2-3';">About the Site's Database</div>
