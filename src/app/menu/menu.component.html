@@ -1,5 +1,6 @@
 <ul #list class="list-container">
-  <li *ngFor="let cat of catArr">
-    <div class="category">Category: {{cat.name}}</div>
+  <p>Categories:</p>
+  <li *ngFor="let cat of catManager.getCatArr()">
+    <div class="category">Category:</div>
   </li>
 </ul>

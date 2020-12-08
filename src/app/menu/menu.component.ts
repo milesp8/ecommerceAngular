@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
-import { AppServiceService } from '../app-service.service';
+import { Router } from '@angular/router';
+import { CatalogManagerService } from '../catalog-manager.service';
 
 @Component({
   selector: 'app-menu',
@@ -8,20 +8,10 @@ import { AppServiceService } from '../app-service.service';
   styleUrls: ['./menu.component.css']
 })
 export class MenuComponent implements OnInit {
-  catArr: {name: String}[] = [];
-  constructor(private appservice: AppServiceService, private activatedRoute: ActivatedRoute) { }
+  constructor(private router: Router, public catManager: CatalogManagerService) { }
 
   ngOnInit(): void {
-    document.getElementById('menu').style.display = 'block';
-    console.log(this.activatedRoute.snapshot.data.catData);
-    const catsObj: any = this.activatedRoute.snapshot.data.catData;
-
-    for (const catInd in catsObj) {
-      const item: {name: String} = {
-        name: catsObj[catInd].name,
-      }
-      this.catArr.push(item);
-    }
+    document.getElementById('menu').style.display = 'none';
   }
 
 
