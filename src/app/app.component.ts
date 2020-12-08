@@ -72,15 +72,12 @@ export class AppComponent implements OnInit {
   toggleMenu() {
 
     let m = document.getElementById('menu');
-    /*
     if (m.style.display === "none") {
       m.style.display = "block";
     } else {
       m.style.display = "none";
     }
-    */
-    this.isOpenMenu = !this.isOpenMenu;
-    m.style.display = 'block';
+    //this.isOpenMenu = !this.isOpenMenu;
   }
   toggleCart() {
     const m = document.getElementById('cart');
