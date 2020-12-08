@@ -25,7 +25,7 @@ export class CartManagerService implements OnInit{
   addToCart(product: {name: string, price: number, img: string, link: string, description: string}): void {
     this.items.push(product);
     if (!isNaN(product.price)) {
-      this.total += product.price;
+      this.total += Math.floor(product.price * 100);
       this.cookie.set('cart', JSON.stringify(this.getItems()));
       this.cookie.set('total', this.getTotal().toString());
     }
@@ -38,7 +38,7 @@ export class CartManagerService implements OnInit{
   removeItem(index: number): {name: string, price: number, img: string, link: string, description: string} {
     const removedItem = this.items[index];
     this.items.splice(index, 1);
-    if (!isNaN(removedItem.price)) {this.total -= removedItem.price; }
+    if (!isNaN(removedItem.price)) {this.total -= Math.floor(removedItem.price * 100); }
     this.cookie.set('cart', JSON.stringify(this.getItems()));
     this.cookie.set('total', this.getTotal().toString());
     if (this.items.length === 0){this.total = 0; }
@@ -54,7 +54,7 @@ export class CartManagerService implements OnInit{
   }
 
   getTotal(): number{
-    return Math.round(this.total * 100) / 100;
+    return this.total / 100;
   }
 
 
