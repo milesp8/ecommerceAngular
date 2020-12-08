@@ -6,7 +6,7 @@ import { AppServiceService } from './app-service.service';
   providedIn: 'root'
 })
 export class CatalogManagerService {
-  catArr: {name: String}[] = [];
+  catArr: {name: string, id: string}[] = [];
   constructor(private appservice: AppServiceService, private activatedRoute: ActivatedRoute) { }
 
   ngOnInit(){
@@ -14,25 +14,27 @@ export class CatalogManagerService {
     const catsObj: any = this.activatedRoute.snapshot.data.catData;
 
     for (const catInd in catsObj) {
-      console.log("Found Cat");
-      const item: {name: String} = {
+      console.log('Found Cat');
+      const item: {name: string, id: string} = {
         name: catsObj[catInd].name,
-      }
+        id: catsObj[catInd]._id
+      };
       this.catArr.push(item);
     }
   }
-  getCatArr(): {name: String}[] {
-    console.log("grabbing catArr");
+  getCatArr(): {name: string, id: string}[] {
+    console.log('grabbing catArr');
     return this.catArr;
   }
 
   setCatArr(catsObj: any[]){
 
     for (const catInd in catsObj) {
-      console.log("Found Cat");
-      const item: {name: String} = {
+      console.log(catsObj[catInd]._id);
+      const item: {name: string, id: string} = {
         name: catsObj[catInd].name,
-      }
+        id: catsObj[catInd]._id
+      };
       this.catArr.push(item);
     }
   }
@@ -41,5 +43,23 @@ export class CatalogManagerService {
     this.catArr = [];
   }
 
- 
+  getId(name: string): string{
+    for (let i = 0; i < this.catArr.length; i++){
+      if (name === this.catArr[i].name){
+        return this.catArr[i].id;
+      }
+    }
+    return 'failed to find name';
+  }
+
+  getName(id: string): string{
+    for (let i = 0; i < this.catArr.length; i++){
+      if (id === this.catArr[i].id){
+        return this.catArr[i].name;
+      }
+    }
+    return 'failed to find name';
+  }
+
+
 }
