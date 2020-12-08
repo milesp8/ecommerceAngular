@@ -13,6 +13,7 @@ export class HomeComponent implements OnInit {
   dealArr: {name: string, price: number, img: string, link: string} [] = [];
   public categories: any
   constructor(private appservice: AppServiceService, private activatedRoute: ActivatedRoute, public catManager: CatalogManagerService) {
+    /*
     for (let i = 1; i < 5; i++){
       const dealitem = {
         name: 'Product ' + i,
@@ -23,9 +24,39 @@ export class HomeComponent implements OnInit {
       // tslint:disable-next-line: no-unused-expression
       this.dealArr.push(dealitem);
     }
-    this.catManager.clearCatArr();  
+    */
+   this.addAllItems();
+    this.catManager.clearCatArr();
     this.catManager.setCatArr(this.activatedRoute.snapshot.data.categoryData);
 
+  }
+
+  addAllItems(): void{
+    const productsObj: any = this.activatedRoute.snapshot.data.prodData;
+    // tslint:disable-next-line: forin
+    for (const productIndex in productsObj) {
+      const item: {name: string, price: number, img: string, link: string, description: string} = {
+        //_id: productsObj[productIndex]._id,
+        name: productsObj[productIndex].name,
+        price: productsObj[productIndex].variantIds[0].price,
+        img: 'assets/img/new.png',
+        link: '/products/' + productIndex + '/0',
+        description: productsObj[productIndex].description.toString()
+
+      };
+      if (item.name.length > 30) { (item.name = item.name.substr(0, 30) + '...'); }
+      // console.log(productsObj[productIndex].description);
+      console.log(this.catManager.getName('5fc3ba1939919f84089b7407'));
+      const prodCats = new Set<string>();
+      productsObj[productIndex].categories.forEach(element => {
+        console.log('() ' + element);
+        console.log('{} ' + this.catManager.getName(element));
+        prodCats.add(this.catManager.getName(element));
+      });
+      console.log(prodCats);
+      if (prodCats.has('deal') || true)
+          {this.dealArr.push(item); }
+    }
   }
 
 
