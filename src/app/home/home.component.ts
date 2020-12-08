@@ -10,7 +10,6 @@ import { CatalogManagerService } from '../catalog-manager.service';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-
   dealArr: {name: string, price: number, img: string, link: string} [] = [];
   public categories: any
   constructor(private appservice: AppServiceService, private activatedRoute: ActivatedRoute, public catManager: CatalogManagerService) {
@@ -24,6 +23,9 @@ export class HomeComponent implements OnInit {
       // tslint:disable-next-line: no-unused-expression
       this.dealArr.push(dealitem);
     }
+    this.catManager.clearCatArr();  
+    this.catManager.setCatArr(this.activatedRoute.snapshot.data.categoryData);
+
   }
 
 
@@ -39,9 +41,8 @@ export class HomeComponent implements OnInit {
       error => {console.log(error)}
     )*/
 
-    console.log("Categories from activated route: ", this.activatedRoute.snapshot.data.categoryData)
-    this.catManager.setCatArr(this.activatedRoute.snapshot.data.categoryData);
-    console.log("Products from activated route: ", this.activatedRoute.snapshot.data.prodData)
+    console.log("Categories from activated route: ", this.activatedRoute.snapshot.data.categoryData);
+    console.log("Products from activated route: ", this.activatedRoute.snapshot.data.prodData);
   }
 
 }

@@ -37,5 +37,9 @@ export class CatalogManagerService {
     }
   }
 
+  clearCatArr(){
+    this.catArr = [];
+  }
+
  
 }
