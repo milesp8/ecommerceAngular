@@ -25,6 +25,14 @@ const routes: Routes = [
     },
 
   },
+  {path: 'catalog/:category',
+  component: CatalogComponent,
+  resolve: {
+    prodData: ProductsGuard,
+    catData: CategoriesGuard,
+  },
+
+},
   {path: 'cart', component: CartComponent},
   {path: 'menu', component:MenuComponent},
   {path: 'login',
