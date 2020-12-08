@@ -12,22 +12,22 @@ export class CartManagerService implements OnInit{
     if (this.cookie.get('cart') !== ''){this.items = JSON.parse(this.cookie.get('cart')); }
     if (this.items.length === 0){this.total = 0; }
     this.total = parseInt(this.cookie.get('total'), 0);
-    if (isNaN(this.getTotal())){this.total = 0; }
+    if (isNaN(this.total)){this.total = 0; }
   }
   // tslint:disable-next-line: contextual-lifecycle
   ngOnInit(): void {
     if (this.cookie.get('cart') !== ''){this.items = JSON.parse(this.cookie.get('cart')); }
-    this.total = 100 * parseInt(this.cookie.get('total'), 0);
+    this.total = parseInt(this.cookie.get('total'), 0);
     if (this.items.length === 0){this.total = 0; }
-    if (isNaN(this.getTotal())){this.total = 0; }
+    if (isNaN(this.total)){this.total = 0; }
   }
 
   addToCart(product: {name: string, price: number, img: string, link: string, description: string}): void {
-    this.items.push(product);
     if (!isNaN(product.price)) {
+      this.items.push(product);
       this.total += Math.floor(product.price * 100);
       this.cookie.set('cart', JSON.stringify(this.getItems()));
-      this.cookie.set('total', this.getTotal().toString());
+      this.cookie.set('total', this.total.toString());
     }
   }
 
@@ -38,10 +38,10 @@ export class CartManagerService implements OnInit{
   removeItem(index: number): {name: string, price: number, img: string, link: string, description: string} {
     const removedItem = this.items[index];
     this.items.splice(index, 1);
-    if (!isNaN(removedItem.price)) {this.total -= Math.floor(removedItem.price * 100); }
-    this.cookie.set('cart', JSON.stringify(this.getItems()));
-    this.cookie.set('total', this.getTotal().toString());
+    if (!isNaN(removedItem.price)) {this.total -= removedItem.price * 100; }
     if (this.items.length === 0){this.total = 0; }
+    this.cookie.set('cart', JSON.stringify(this.getItems()));
+    this.cookie.set('total', this.total.toString());
     return removedItem;
   }
 
@@ -49,7 +49,7 @@ export class CartManagerService implements OnInit{
     this.items = [];
     this.total = 0;
     this.cookie.set('cart', JSON.stringify(this.getItems()));
-    this.cookie.set('total', this.getTotal().toString());
+    this.cookie.set('total', this.total.toString());
     return this.items;
   }
 
