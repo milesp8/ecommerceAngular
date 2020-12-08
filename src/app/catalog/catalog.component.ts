@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { AppServiceService } from '../app-service.service';
 import { CartManagerService } from '../cart-manager.service';
+import { CatalogManagerService } from '../catalog-manager.service';
 
 @Component({
   selector: 'app-catalog',
@@ -13,7 +14,7 @@ export class CatalogComponent implements OnInit {
  itemArr: {name: string, price: number, img: string, link: string, description: string} [] = [];
  category = '';
  title = 'Our Full Catalog';
-  constructor(private appservice: AppServiceService, private activatedRoute: ActivatedRoute) {}
+  constructor(private appservice: AppServiceService, private activatedRoute: ActivatedRoute, private catManager: CatalogManagerService) {}
 
   ngOnInit(): void {
     console.log(this.activatedRoute.snapshot.data.prodData);
@@ -39,8 +40,16 @@ export class CatalogComponent implements OnInit {
       };
       if (item.name.length > 30) { (item.name = item.name.substr(0, 30) + '...'); }
       // console.log(productsObj[productIndex].description);
-      console.log(this.category + productsObj[productIndex].categories);
-      if(productsObj[productIndex].categories.includes(this.category) || this.category == null) {this.itemArr.push(item); }
+      console.log(this.catManager.getName('5fc3ba1939919f84089b7407'));
+      const prodCats = new Set<string>();
+      productsObj[productIndex].categories.forEach(element => {
+        console.log('() ' + element);
+        console.log('{} ' + this.catManager.getName(element));
+        prodCats.add(this.catManager.getName(element));
+      });
+      console.log(prodCats);
+      if (prodCats.has(this.category) || this.category == null)
+          {this.itemArr.push(item); }
     }
   }
 
