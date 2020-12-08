@@ -14,6 +14,7 @@ import { LoginComponent } from './login/login.component';
 import { AuthGuard } from './guards/auth.guard';
 import {PaysuccessComponent} from './paysuccess/paysuccess.component';
 import { MenuComponent } from './menu/menu.component';
+import { CatalogManagerService } from './catalog-manager.service';
 
 
 const routes: Routes = [
@@ -35,6 +36,11 @@ const routes: Routes = [
 },
   {path: 'cart', component: CartComponent},
   {path: 'menu', component:MenuComponent},
+  {path: 'menuserv', component: CatalogManagerService,
+  resolve: {
+    categoryData: CategoriesGuard,
+    prodData: ProductsGuard
+  }},
   {path: 'login',
     component: LoginComponent
   },
