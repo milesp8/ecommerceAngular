@@ -22,6 +22,7 @@ import { EditCategoriesComponent } from './edit-categories/edit-categories.compo
 import { AuthGuard } from './guards/auth.guard';
 import { LoginComponent } from './login/login.component';
 import { PaysuccessComponent } from './paysuccess/paysuccess.component';
+import { CookieService } from 'ngx-cookie-service';
 
 @NgModule({
   declarations: [
