@@ -17,7 +17,7 @@ export class CartManagerService implements OnInit{
   // tslint:disable-next-line: contextual-lifecycle
   ngOnInit(): void {
     if (this.cookie.get('cart') !== ''){this.items = JSON.parse(this.cookie.get('cart')); }
-    this.total = parseInt(this.cookie.get('total'), 0);
+    this.total = 100 * parseInt(this.cookie.get('total'), 0);
     if (this.items.length === 0){this.total = 0; }
     if (isNaN(this.getTotal())){this.total = 0; }
   }
