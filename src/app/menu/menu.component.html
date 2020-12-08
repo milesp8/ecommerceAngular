@@ -1,9 +1,15 @@
 <ul #list class="list-container">
-  <div class="title"><h6>Shop By Department</h6></div>
+  <div class="title">
+    <h6>Shop By Department</h6>
+  </div>
   <li *ngFor="let cat of catManager.getCatArr()">
-    <div class="category">Go To {{cat.name}}</div>
+    <a routerLink="/catalog/{{cat.name}}">
+      <div class="category">Go To {{cat.name}}</div>
+    </a>
   </li>
-  <div class="title"><h6>Our Information</h6></div>
+  <div class="title">
+    <h6>Our Information</h6>
+  </div>
   <li>
 
   </li>
