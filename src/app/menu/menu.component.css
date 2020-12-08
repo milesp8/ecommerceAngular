@@ -21,6 +21,7 @@
   grid-column-gap: 150px;
   grid-row-gap: 3px;
   list-style-type: none;
+  text-align: center;
 }
 
 .category {
@@ -32,16 +33,30 @@
 
 .category:hover{
   background: rgba(20, 165, 93, 0.623);
+  cursor: pointer;
 }
 
 .title{
-  border: solid;
-  border-color:rgba(0, 0, 0, 0.623);
-  background: rgba(18, 160, 89, 0.623);
-  padding: 30px;
+  padding: 10px;
   text-align: center;
 }
 h6{
+  font-weight: bold;
+  font-style: oblique;
   color: black;
   font-size: 20px;
+}
+hr{
+  border: none;
+  height: 1px;
+  width: 100%;
+  color: #333;
+  background-color: #333;
+}
+a{
+  color: black;
+}
+
+img{
+  border-radius: 20px;
 }

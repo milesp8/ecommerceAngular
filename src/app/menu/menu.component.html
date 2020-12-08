@@ -1,16 +1,16 @@
 <ul #list class="list-container">
-  <div class="title">
-    <h6>Shop By Department</h6>
-  </div>
+  <div class="title"><hr><h6>Shop By Department</h6><hr></div>
   <li *ngFor="let cat of catManager.getCatArr()">
     <a routerLink="/catalog/{{cat.name}}">
       <div class="category">Go To {{cat.name}}</div>
     </a>
   </li>
-  <div class="title">
-    <h6>Our Information</h6>
-  </div>
+  <div class="title"><hr><h6>Our Information</h6><hr></div>
   <li>
-
+    <div class="category" onclick="location.href='https://github.com/milesp8/ecommerceAngular';">About the Site's Frontend</div>
+    <div class="category" onclick="location.href='https://github.com/milesp8/ecommerceproj2-3';">About the Site's Database</div>
   </li>
+  <br><br><br>
+  <li><img src="../assets/img/symbol.png"></li>
+  <li><em>UNO Premium is a fictitious service that does NOT collect payment data developed by Team 1 (Uno Systems)</em></li>
 </ul>
