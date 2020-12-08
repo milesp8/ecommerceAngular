@@ -1,7 +1,8 @@
 <div class = 'horizontal'>
+  <h4>Styles:</h4>
   <div class='variant' *ngFor="let v of variants ; index as i">
     <a routerLink={{v.link}}>
-      <button class ='v-button'>{{v.element.name}} ({{v.element.quantity}} in stock)</button>
+      <button class ='v-button'>{{v.element.name}} ({{v.element.quantity}} in stock) <br><br>${{v.element.price}}</button>
     </a>
   </div>
 </div>
@@ -11,12 +12,18 @@
   <li>
     <div class="grid-item">
       <a>
-        <h3>{{name}} <button #add class='add' (click)='addToCart()'><b>+</b></button></h3>
+        <h3>{{name}}</h3>
         <p>${{price}}</p>
-
+        <hr>
+        <button #add class='add' (click)='addToCart()'><p>Add to Cart:<b>+</b></p></button>
+        <hr>
         <img class="images" src={{img}} alt="Product Image" width="400" height="400">
       </a>
     </div>
-    <p>{{text}}</p>
+    <div class="grid-item">
+      <h3>Product Description:</h3>
+      <hr>
+      <em>{{text}}</em>
+    </div>
   </li>
 </ul>
