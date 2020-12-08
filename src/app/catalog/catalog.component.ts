@@ -11,11 +11,16 @@ import { CartManagerService } from '../cart-manager.service';
 
 export class CatalogComponent implements OnInit {
  itemArr: {name: string, price: number, img: string, link: string, description: string} [] = [];
+ category = '';
   constructor(private appservice: AppServiceService, private activatedRoute: ActivatedRoute) {}
 
   ngOnInit(): void {
     console.log(this.activatedRoute.snapshot.data.prodData);
     // console.log(this.activatedRoute.snapshot.data['categoryData'])
+
+    this.activatedRoute.paramMap.subscribe(params => {
+      this.category = params.get('category')
+    })
 
     const productsObj: any = this.activatedRoute.snapshot.data.prodData;
 
@@ -32,8 +37,8 @@ export class CatalogComponent implements OnInit {
       };
       if (item.name.length > 30) { (item.name = item.name.substr(0, 30) + '...'); }
       // console.log(productsObj[productIndex].description);
-
-      this.itemArr.push(item);
+      console.log(this.category + productsObj[productIndex].categories);
+      if(productsObj[productIndex].categories.includes(this.category) || this.category == null) {this.itemArr.push(item); }
     }
   }
 
