@@ -27,3 +27,81 @@
     </div>
   </li>
 </ul>
+
+
+<main class="container">
+
+  <!-- Left Column / Headphones Image -->
+  <div class="left-column">
+    <ngb-carousel #carousel [interval]="1000" style="width: 650px; height: 650px">
+      <ng-template ngbSlide *ngFor="let img of images; index as i">
+        <div class="carousel-caption">
+          <h3>My slide {{i + 1}} title</h3>
+        </div>
+        <div class="picsum-img-wrapper">
+          <img [src]="img" alt="My image {{i + 1}} description" style="width: 650px; height: 650px">
+        </div>
+      </ng-template>  
+    </ngb-carousel>
+  </div>
+
+
+  <!-- Right Column -->
+  <div class="right-column">
+
+    <!-- Product Description -->
+    <div class="product-description">
+      <span>Headphones</span>
+      <h1>{{name}}</h1>
+      <p>{{text}}</p>
+    </div>
+
+    <!-- Product Configuration -->
+    <div class="product-configuration">
+
+      <!-- Product Color -->
+      <div class="product-color">
+        <span>Variant</span>
+
+        <div class="variant-choose">
+          
+            <button data-image="red" type="button" id="red" name="color" value="red" checked>Red</button>
+            <label for="red"><span></span></label>
+          
+            <button data-image="blue" type="button" id="blue" name="color" value="blue">Blue</button>
+            <label for="blue"><span></span></label>
+
+            <button data-image="black" type="button" id="black" name="color" value="black">Black</button>
+            <label for="black"><span></span></label>
+        </div>
+
+      </div>
+
+      <!-- Cable Configuration -->
+      <div class="cable-config">
+        <span>Cable configuration</span>
+
+        <div class="cable-choose">
+          <button>Straight</button>
+          <button>Coiled</button>
+          <button>Long-coiled</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Product Pricing -->
+    <div class="product-price">
+      <span>148$</span>
+      <a href="#" class="cart-btn">Add to cart</a>
+    </div>
+  </div>
+</main>
+
+
+
+
+<button type="button" (click)="togglePaused()" class="btn btn-outline-dark btn-sm">
+  {{paused ? 'Cycle' : 'Pause' }}
+</button>
+
+

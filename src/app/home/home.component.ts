@@ -28,7 +28,6 @@ export class HomeComponent implements OnInit {
    this.addAllItems();
     this.catManager.clearCatArr();
     this.catManager.setCatArr(this.activatedRoute.snapshot.data.categoryData);
-
   }
 
   addAllItems(): void{
@@ -63,17 +62,7 @@ export class HomeComponent implements OnInit {
   }
 
 
-
-
   ngOnInit() {
-
-
-    /*
-    this.appservice.getCategory('5fc3ba1939919f84089b7407').subscribe(
-      data => {console.log(data)
-        this.categories = data},
-      error => {console.log(error)}
-    )*/
 
     console.log("Categories from activated route: ", this.activatedRoute.snapshot.data.categoryData);
     console.log("Products from activated route: ", this.activatedRoute.snapshot.data.prodData);

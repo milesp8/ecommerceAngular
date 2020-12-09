@@ -27,7 +27,7 @@ export class LoginComponent implements OnInit {
     let password = (<HTMLInputElement>document.getElementById('pswId')).value;
 
     if (email == '' || password == '') {
-      this.status = 'Please fill in all fields'
+      this.status = 'Please enter email and password'
     } else {
       this.status = ''
 

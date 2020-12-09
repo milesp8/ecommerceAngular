@@ -1,12 +1,23 @@
 <h3>All Items:</h3>
 <ul #list class="list-container">
     <li *ngFor="let prod of prodArr">
-        <h1>Product: {{prod.name}}</h1>
-        <div class="item-editor">
-            <h3>Product ID: {{prod._id}}</h3>
-            <label for="pname">Change Product Name:</label>
-            <input type="text" id="pname.{{prod.name}}" name="pname" value={{prod.name}} size="100"> <br> <br>
-            <button type="button" class="collapsible" (click)=toggleCollapse()>Edit Categories</button>
+        <h1>{{prod.name}}</h1>
+        <div class="item-editor container">
+            <h3>ID: {{prod._id}}</h3>
+            <div>
+                <label for="pname">Edit Product Name:</label>
+            </div>
+            <div>
+                <input type="text" id="pname.{{prod.name}}" name="pname" value={{prod.name}} size="100"> <br> <br>
+            </div>
+
+            <div>
+                <label for="pname">Edit Description:</label>
+            </div>
+            <div>
+                <textarea put type="text" id="pname.{{prod.description}}" name="pname" value={{prod.description}} size="100" rows="12" cols="110"></textarea> <br> <br>
+            </div>
+            <button type="button" class="collapsible btn btn-primary" (click)=toggleCollapse()>Edit Categories</button>
             <div class="content">
                 <p>{{prod.name}} categories:</p>
                 <ul #list class="list-container">
@@ -19,7 +30,7 @@
                 </ul>
             </div>
             <br><br>
-            <button type="button" class="collapsible" (click)=toggleCollapse()>Look Variants</button>
+            <button type="button" class="collapsible btn btn-primary" (click)=toggleCollapse()>Look Variants</button>
             <div class="content">
                 <p>{{prod.name}} variants:</p>
                 <ul #list class="list-container">
@@ -37,6 +48,7 @@
                     
                         <hr>
                         <p>Image Upload:</p>
+                        <input type="file" (change)="onFileSelected($event)" multiple>
                         <div class="img-button">Change Image</div>
                         <button>Confirm Submission</button>
                         <hr>
@@ -65,8 +77,8 @@
                 </ul>
             </div>
             <br><br>
-            <button>Remove Product</button> <br><br>
-            <button>Update Product</button>
+            <button class="btn btn-danger">Remove Product!</button> <br><br>            
+            <button class="btn btn-success">Update Product</button>
         </div>
     </li>
     <h2>Create a New Product</h2>
@@ -103,6 +115,7 @@
                         </label>
                         <hr>
                         <p>Image Upload:</p>
+                        <input type="file" (change)="onFileSelected($event)" multiple>
                         <div class="img-button">Choose Image</div>
                         <button>Confirm Submission</button>
                         <hr>
@@ -111,8 +124,7 @@
                 </ul>
             </div>
             <br><br>
-            <button>Remove Product!</button> <br><br>
-            <button>Update Product!</button>
+            <button class="btn btn-success">Add Product</button>
         </div>
     </li>
 </ul>

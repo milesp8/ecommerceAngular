@@ -2,9 +2,13 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AppServiceService } from '../app-service.service';
 import { CartManagerService } from '../cart-manager.service';
+import { AfterViewInit, ViewChild } from '@angular/core';
+import { NgbCarousel } from '@ng-bootstrap/ng-bootstrap';
+
+
 
 @Component({
-  selector: 'app-products',
+  selector: 'app-products, ngbd-carousel-pause',
   templateUrl: './products.component.html',
   styleUrls: ['./products.component.css']
 })
@@ -17,6 +21,9 @@ export class ProductsComponent implements OnInit {
   text: string;
   variants = [];
   variantNum = 0;
+
+  images = ['../assets/products/black.png', '../assets/products/red.png', '../assets/products/blue.png', '../assets/img/new_2.png'];
+
   constructor(private router: Router, private activeRoute: ActivatedRoute, private cartManager: CartManagerService) {
 
   }
@@ -37,7 +44,28 @@ export class ProductsComponent implements OnInit {
       this.img = 'assets/img/new.png';
       this.text =  productsObj[this.productId].description.toString();
     });
+
+    this.carousel.pause();
+
   }
+  paused = false;
+  unpauseOnArrow = false;
+  pauseOnIndicator = false;
+  pauseOnHover = true;
+  pauseOnFocus = true;
+
+  @ViewChild('carousel', {static : true}) carousel: NgbCarousel;
+
+  togglePaused() {
+    console.log("Pause called")
+    this.carousel.pause();
+    
+  }
+
+  ngAfterViewInit() {
+    this.carousel.pause();
+  }
+
   addToCart(): void{
       this.cartManager.addToCart({
         name: this.name,
