@@ -24,11 +24,9 @@ import { waitForAsync } from '@angular/core/testing';
 
 export class AppComponent implements OnInit {
   title = 'ecommerceAngular';
-  isOpenMenu = true;
   isOpenCart = false;
 
   constructor(private service: AppServiceService, private authservice: AuthService, private router: Router) {
-
   }
 
   ngOnInit() {
