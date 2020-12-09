@@ -2,21 +2,28 @@
     display: grid;
     background-color: rgba(220, 220, 235, 1);
     grid-template-columns: auto;
-    padding: 5px;
+    padding: 25px;
+    border-radius: 20px;
     grid-column-gap: 150px;
     grid-row-gap: 20px;
     list-style-type: none;
 }
 li{
-    background-color: rgb(155, 155, 155);
+    background-color: rgb(218, 218, 218);
     border: solid;
     border-color: black;
     padding: 20px;
     width: fit-content;
+    background-image: linear-gradient(180deg, #fff, #ddd 40%, #ccc);
+    border-radius: 20px;
 }
-
+.li-sub{
+    max-width: 1000px;
+}
 .item-editor{
     background-color: rgb(121, 121, 121);
+    background-image: linear-gradient(180deg,  #ddd, #ccc 40%, #bbb);
+    border-radius: 20px;
     padding: 10px;
 }
 
@@ -33,6 +40,7 @@ li{
     display: none;
     overflow: hidden;
     background-color: #f1f1f1;
+    width: auto;
 }
 .img-button{
     padding: 18px;
@@ -41,6 +49,7 @@ li{
     border-style: dotted;
     border-color:  rgb(102, 101, 101);
     cursor: pointer;
+    width: 100%;
 }
 .img-button:hover{
     background-color: rgb(102, 101, 101);

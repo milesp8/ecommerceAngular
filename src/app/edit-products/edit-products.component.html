@@ -21,7 +21,7 @@
             <div class="content">
                 <p>{{prod.name}} categories:</p>
                 <ul #list class="list-container">
-                    <li *ngFor="let cat of prod.categories">
+                    <li class="li-sub" *ngFor="let cat of prod.categories">
                         <label class="container">{{cat}}
                             <input type="checkbox" checked="checked">
                             <span class="checkmark"></span>
@@ -34,7 +34,7 @@
             <div class="content">
                 <p>{{prod.name}} variants:</p>
                 <ul #list class="list-container">
-                    <li *ngFor="let variant of prod.variantIds">
+                    <li class="li-sub" *ngFor="let variant of prod.variantIds">
                         <p>Variant: NAME HERE</p>
                         <label class="container">Change Variant Name
                             <input size="80" value={{variant.name}}>
@@ -56,7 +56,7 @@
                         <button>Update Variant</button>
                     </li>
                     <p>Create New Variant:</p>
-                    <li>
+                    <li class="li-sub">
                         <label class="container">New Variant's Name
                             <input type="text" size="80">
                         </label>
