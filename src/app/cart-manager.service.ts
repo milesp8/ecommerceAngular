@@ -54,7 +54,7 @@ export class CartManagerService implements OnInit{
   }
 
   getTotal(): number{
-    return this.total / 100;
+    return Math.round(this.total) / 100;
   }
 
   getAmt(){
