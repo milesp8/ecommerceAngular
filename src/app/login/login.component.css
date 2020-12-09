@@ -1,3 +1,6 @@
+img{
+    border-radius: 20px;
+}
 .card-container.card {
     max-width: 350px;
     padding: 40px 40px;
@@ -21,7 +24,7 @@ section{
 }
 
 .login-page {
-    padding: 50px 0;
+    padding: 10px 0;
     background: radial-gradient(rgba(27, 230, 128, 0.623));
     width: 1000px;
 }
