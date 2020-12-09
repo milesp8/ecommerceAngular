@@ -146,7 +146,8 @@ export class AppServiceService {
     return this.http.post('/api/createCategory', category, 
     {
       headers: new HttpHeaders({
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json',
+        Authorization: 'Bearer '+localStorage.getItem('token')
       })
     }).pipe(catchError(this.handleError.bind(this))) 
   }
@@ -181,8 +182,7 @@ export class AppServiceService {
     getAllOrders(): Observable<any> {
       return this.http.get('/api/allOrders', {
         headers: new HttpHeaders({
-          'Content-Type': 'application/json',
-          Authorization: localStorage.getItem('token')
+          'Content-Type': 'application/json'
         })
       })
       .pipe(catchError(this.handleError.bind(this)))
