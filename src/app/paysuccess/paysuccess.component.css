@@ -1,0 +1,16 @@
+.box-cont{
+    border: solid;
+    border-radius: 20px;
+    padding: 30px;
+}
+img {
+    border-radius: 20px;
+}
+
+hr {
+    border: none;
+    height: 1px;
+    width: 100%;
+    color: #333;
+    background-color: #333;   
+}
