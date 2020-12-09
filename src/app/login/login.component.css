@@ -47,6 +47,10 @@ section{
     display: inline-block;
 }
 
+.error{
+  color: red;
+}
+
 
 /*
  * Card component
