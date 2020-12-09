@@ -6,6 +6,7 @@
   grid-column-gap: 150px;
   grid-row-gap: 100px;
   border-radius: 20px;
+  background-image: linear-gradient(180deg,  rgba(198, 198, 216, 0.7), #5d6a75a4 40%,#49545ea4);
 }
 
 .grid-item {
