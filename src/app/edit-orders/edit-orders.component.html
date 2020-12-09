@@ -3,7 +3,7 @@
     <li *ngFor="let ord of orderArr">
         <p>The Order of {{ord.name}}</p>
         <div class="item-editor">
-            <button>Cancel Order!</button>
+            <button id={{ord._id}}.order (click)="remove(ord._id)">Cancel Order!</button>
         </div>
     </li>
 </ul>

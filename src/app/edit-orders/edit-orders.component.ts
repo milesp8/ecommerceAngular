@@ -9,7 +9,7 @@ import { AppServiceService } from '../app-service.service';
 })
 export class EditOrdersComponent implements OnInit {
 
-  orderArr: {name: string, email: string, address: string, total: number, items: [[Object, String, Object, String, Number]], deliverydate: string} [] = [];
+  orderArr: {_id: any, name: string, email: string, address: string, total: number, items: [[Object, String, Object, String, Number]], deliverydate: string} [] = [];
   constructor(private appservice: AppServiceService, private activatedRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
@@ -17,7 +17,8 @@ export class EditOrdersComponent implements OnInit {
     const ordersObj: any = this.activatedRoute.snapshot.data.orderData;
     //Utilize for loop from 
     for (const orderIndex in ordersObj) {
-      const ord: {name: string, email: string, address: string, total: number, items: [[Object, String, Object, String, Number]], deliverydate: string} = {
+      const ord: {_id: any, name: string, email: string, address: string, total: number, items: [[Object, String, Object, String, Number]], deliverydate: string} = {
+      _id: ordersObj[orderIndex]._id,
       name: ordersObj[orderIndex].name,
       email: ordersObj[orderIndex].email,
       address: ordersObj[orderIndex].address,
@@ -30,6 +31,16 @@ export class EditOrdersComponent implements OnInit {
       this.orderArr.push(ord);
     }
   }
-  remove(name: String){
+  runInit() {
+    window.location.reload();  
+  }
+  remove(ord_id){
+    console.log(ord_id);
+    this.appservice.deleteOrder(ord_id).subscribe((data) =>{
+      console.log(data)
+      this.runInit()
+    }, (error) => {
+      console.log(error)
+    })
   }
 }
