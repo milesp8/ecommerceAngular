@@ -46,7 +46,7 @@ export class HomeComponent implements OnInit {
       const item: {name: string, price: number, img: string, link: string, description: string} = {
         name: productsObj[dealNums[i]].name,
         price: productsObj[dealNums[i]].variantIds[0].price,
-        img: '/assets/products/' + productsObj[dealNums[i]].images[0],
+        img: '/assets/products/' + productsObj[dealNums[i]].variantIds[0].images[0],
         link: '/products/' + dealNums[i] + '/0',
         description: productsObj[dealNums[i]].description.toString()
       };
@@ -63,7 +63,7 @@ export class HomeComponent implements OnInit {
       const item: {name: string, price: number, img: string, link: string, description: string} = {
         name: productsObj[electronicNums[i]].name,
         price: productsObj[electronicNums[i]].variantIds[0].price,
-        img: '/assets/products/' + productsObj[electronicNums[i]].images[0],
+        img: '/assets/products/' + productsObj[electronicNums[i]].variantIds[0].images[0],
         link: '/products/' + electronicNums[i] + '/0',
         description: productsObj[electronicNums[i]].description.toString()
       };
@@ -80,7 +80,7 @@ export class HomeComponent implements OnInit {
           const item: {name: string, price: number, img: string, link: string, description: string} = {
             name: productsObj[houseNums[i]].name,
             price: productsObj[houseNums[i]].variantIds[0].price,
-            img: '/assets/products/' + productsObj[houseNums[i]].images[0],
+            img: '/assets/products/' + productsObj[houseNums[i]].variantIds[0].images[0],
             link: '/products/' + houseNums[i] + '/0',
             description: productsObj[houseNums[i]].description.toString()
           };
@@ -97,7 +97,7 @@ export class HomeComponent implements OnInit {
       const item: {name: string, price: number, img: string, link: string, description: string} = {
         name: productsObj[hardwareNums[i]].name,
         price: productsObj[hardwareNums[i]].variantIds[0].price,
-        img: '/assets/products/' + productsObj[hardwareNums[i]].images[0],
+        img: '/assets/products/' + productsObj[hardwareNums[i]].variantIds[0].images[0],
         link: '/products/' + hardwareNums[i] + '/0',
         description: productsObj[hardwareNums[i]].description.toString()
       };

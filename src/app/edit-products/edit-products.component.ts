@@ -144,7 +144,7 @@ export class EditProductsComponent implements OnInit {
       }
       this.appservice.updateVariants(variantObj).subscribe((data) =>{
         console.log(data)
-        //this.runInit()
+        this.runInit()
       }, (error) => {
         console.log(error)
       })

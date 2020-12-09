@@ -40,9 +40,24 @@ export class ProductsComponent implements OnInit {
       console.log(this.variants);
       this.name = productsObj[this.productId].name + ' (' + this.variants[this.variantNum].element.name + ')';
       this.price = this.variants[this.variantNum].element.price;
-      this.img = '/assets/products/' + productsObj[this.productId].images[this.variantNum];
-      productsObj[this.productId].images.forEach(element => {
-        this.images.push('/assets/products/' + element);
+      console.log("Product id: ", this.productId)
+      console.log("Prod object: ", productsObj)
+      console.log("Image name: ", productsObj[this.productId].images[this.variantNum])
+      this.img = '/assets/products/' + productsObj[this.productId].variantIds[this.variantNum].images[0];
+
+
+      //this.img = '/assets/products/' + productsObj[this.productId].images[this.variantNum];
+
+
+      productsObj[this.productId].variantIds.forEach(element => {
+        console.log(element.images[0])
+
+        //this.images.push('/assets/products/' + element.images[0]);
+      });
+
+      productsObj[this.productId].variantIds.forEach(element => {
+        this.images.push('/assets/products/' + element.images[0]);
+        //this.images.push('/assets/products/' + element);
       });
       this.text =  productsObj[this.productId].description.toString();
     });
