@@ -36,6 +36,7 @@ export class EditOrdersComponent implements OnInit {
   }
   remove(ord_id){
     console.log(ord_id);
+    this.runInit();
     this.appservice.deleteOrder(ord_id).subscribe((data) =>{
       console.log(data)
       this.runInit()
