@@ -81,20 +81,25 @@ export class PaymentComponent implements OnInit {
         let deliverydate = "0";
         let order = { name: name, email: email, address: address, total: total, items: items, deliverydate: deliverydate }
         
+        /*
         this.appService.getAllProducts().subscribe((data) => {
           console.log(data)
         }, (error) => {
           console.log("Error: ", error)
-        })
+        })*/
+
+        console.log(items)
+        
         
         this.appService.addOrder(order).subscribe((data) => {
           console.log(data)
         }, (error) => {
           console.log(error)
-        }
-        );
+        });
+        
         console.log(this.appService.getAllOrders());
         this.cartManager.clearCart();
+        this.toggleToolbar();
         this.router.navigate(["/paysuccess"]);
       }
     }
