@@ -95,9 +95,44 @@ li{
   border-radius: 15px;
   margin-left: 5px;
   margin-right: 5px;
-  background-color: #E3E3F6;
+  background-color: #d1d1d1;
   transform: scale(.8);
+  background-color: rgba(230, 230, 250, 0.7);
+    border: 5px solid rgba(0, 0, 0, 0.8);
+    box-shadow: 8px 8px 5px #444;
+    background-image: linear-gradient(180deg, #fff, #ddd 40%, #ccc);
 }
 li:hover{
-  transform: scale(1);
+  opacity: 90%;
+}
+img{
+  border-radius: 5px;
+  border: solid;
+  border-color: black;
+}
+button{
+  border-radius: 10px;
+}
+button:hover{
+  transform: scale(.9);
+}
+
+.checkoutButton{
+  background-color: rgb(11, 173, 11);
+}
+.clearButton{
+  background-color: rgb(160, 10, 10);
+}
+.clearButton:hover{
+  transform: scale(.9);
+}
+h2{
+  font-weight: bold;
+}
+hr{
+  border: none;
+  height: 1px;
+  width: 80%;
+  color: #333;
+  background-color: #333;
 }

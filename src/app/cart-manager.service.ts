@@ -57,5 +57,9 @@ export class CartManagerService implements OnInit{
     return this.total / 100;
   }
 
+  getAmt(){
+    return this.items.length;
+  }
+
 
 }

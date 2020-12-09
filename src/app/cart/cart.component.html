@@ -1,8 +1,14 @@
 <div #cart class="scrollable">
+  <hr>
   <div class="button-container">
-    <h2> Total: ${{cartManager.getTotal()}}</h2>
-    <a routerLink="/payment"><button (click)="toggleCart()">Checkout</button></a>
+    <hr>
+    <h3>Your Cart has {{cartManager.getAmt()}} item(s)</h3>
+    <h2> Subtotal: ${{cartManager.getTotal()}}</h2>
+    <hr>
+    <a routerLink="/payment"><button class="checkoutButton" (click)="toggleCart()">Checkout</button></a>
+    <button class="clearButton" (click)="clearCart()">Clear Cart</button>
   </div>
+  <hr>
   <div class="space"></div>
   <ul #grid class="grid-container">
     <li *ngFor="let item of cartManager.getItems() ; index as i">

@@ -16,7 +16,9 @@ constructor(private router: Router, public cartManager: CartManagerService) {}
 ngOnInit(): void{
     document.getElementById('cart').style.display = 'none';
   }
-
+clearCart(){
+  this.cartManager.clearCart();
+}
 toggleCart() {
   var m = document.getElementById('cart');
   if (m.style.display === "none") {
