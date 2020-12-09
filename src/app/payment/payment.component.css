@@ -10,9 +10,11 @@
     grid-column-gap: 25px;
     /*grid-row-gap: 100px;*/
     border-radius: 20px;
-    border: solid;
-    background-image: linear-gradient(180deg, rgba(29, 154, 204, 0.425), rgba(27, 135, 177, 0.425) 40%,  rgba(29, 204, 102, 0.425));
-    
+    border: solid;    
+}
+.row {
+    display: flex;
+    grid-template-columns: auto auto auto;
 }
 
 .shadowbox {
@@ -22,4 +24,17 @@
     padding: 8px 12px;
     margin-bottom: 30px;
     background-image: linear-gradient(180deg, #fff, #ddd 40%, #ccc);
-  }
+}
+.name-cont {
+    padding: 10px;
+    border: solid;
+    border-radius: 10px;
+}
+
+hr {
+    border: none;
+    height: 1px;
+    width: 100%;
+    color: #333;
+    background-color: #333;   
+}

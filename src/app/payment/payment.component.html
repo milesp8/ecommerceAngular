@@ -1,7 +1,6 @@
 <h3>Checkout</h3>
 <div class="section">
     <ul #grid class="grid-container">
-
         <div class="shadowbox">
             <ul #list class="list-group">
                 <li *ngFor="let item of cartManager.getItems()">
@@ -13,38 +12,55 @@
         <p>Your total is: ${{cartManager.getTotal()}}</p>
 
     </div>
-        <div>
-            <p>First Name<br><input type="text" id="firstname" placeholder=" Your first name" name="search"><span
-                    class="required" id="n1"> *</span></p>
+    <div class="row">
+        <div class="name-cont">
+            <h3>Name Information</h3>
+            <hr>
+            <div>
+                <p>First Name<br><input type="text" id="firstname" placeholder=" Your first name" name="search"><span
+                        class="required" id="n1"> *</span></p>
+            </div>
+            <div>
+                <p>Last Name<br><input type="text" id="lastname" placeholder=" Your last name" name="search"><span
+                        class="required" id="n2"> *</span></p>
+            </div>
+            <div>
+                <p>Email Address<br><input type="text" id="email" placeholder=" Your email" name="search"><span
+                        class="required" id="e"> *</span></p>
+            </div>
         </div>
-        <div>
-            <p>Last Name<br><input type="text" id="lastname" placeholder=" Your last name" name="search"><span
-                    class="required" id="n2"> *</span></p>
+        <div class="name-cont">
+            <h3>Delivery Information</h3>
+            <hr>
+            <div>
+                <p>Address Line 1<br><input type="text" id="address1" placeholder=" Your address line 1" name="search"><span
+                        class="required" id="a1"> *</span></p>
+            </div>
+            <div>
+                <p>Address Line 2<br><input type="text" id="address2" placeholder=" Your address line 2" name="search"><span
+                        class="required" id="a2"> *</span></p>
+            </div>
+            <div>
+                <p>Address Line 3<br><input type="text" id="address3" placeholder=" Your address line 3" name="search"></p>
+            </div>
         </div>
-        <div>
-            <p>Email Address<br><input type="text" id="email" placeholder=" Your email" name="search"><span
-                    class="required" id="e"> *</span></p>
+        <div class="name-cont">
+            <h3>Payment Information</h3>
+            <hr>
+            <div>
+                <p>Credit Card Number<br><input type="text" id="creditnumber" placeholder=" Your credit card number"
+                        name="search"><span class="required" id="c1"> *</span></p>
+            </div>
+            <div>
+                <p>Credit Card Security Code<br><input type="text" id="creditcode"
+                        placeholder=" Your credit card security code" name="search"><span class="required" id="c2"> *</span>
+                </p>
+            </div>
         </div>
-        <div>
-            <p>Address Line 1<br><input type="text" id="address1" placeholder=" Your address line 1" name="search"><span
-                    class="required" id="a1"> *</span></p>
-        </div>
-        <div>
-            <p>Address Line 2<br><input type="text" id="address2" placeholder=" Your address line 2" name="search"><span
-                    class="required" id="a2"> *</span></p>
-        </div>
-        <div>
-            <p>Address Line 3<br><input type="text" id="address3" placeholder=" Your address line 3" name="search"></p>
-        </div>
-        <div>
-            <p>Credit Card Number<br><input type="text" id="creditnumber" placeholder=" Your credit card number"
-                    name="search"><span class="required" id="c1"> *</span></p>
-        </div>
-        <div>
-            <p>Credit Card Security Code<br><input type="text" id="creditcode"
-                    placeholder=" Your credit card security code" name="search"><span class="required" id="c2"> *</span>
-            </p>
-        </div>
+    </div>
+        
+       
+       
     </ul>
 </div>
 <div><button (click)="addThisOrder(); toggleToolbar();">Done</button>

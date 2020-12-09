@@ -30,4 +30,6 @@ export class EditOrdersComponent implements OnInit {
       this.orderArr.push(ord);
     }
   }
+  remove(name: String){
+  }
 }
