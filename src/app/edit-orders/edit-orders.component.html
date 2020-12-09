@@ -1,9 +1,11 @@
 <h1>Current Order List:</h1>
 <ul #list class="list-container">
     <li *ngFor="let ord of orderArr">
-        <p>The Order of {{ord.name}}</p>
-        <div class="item-editor">
-            <button id={{ord._id}}.order (click)="remove(ord._id)">Cancel Order!</button>
-        </div>
+        <h2>The Order of {{ord.name}}</h2>
+        <hr>
+        <p>Order ID: {{ord._id}}</p>
+        <p>Order Total: ${{ord.total}}</p>
+        <hr>
+        <button id={{ord._id}}.order (click)="remove(ord._id)">Cancel Order!</button>
     </li>
 </ul>
