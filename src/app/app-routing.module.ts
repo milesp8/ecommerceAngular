@@ -5,7 +5,7 @@ import { HomeComponent } from './home/home.component';
 import { CartComponent } from './cart/cart.component';
 import { AccountComponent } from './account/account.component';
 import {ProductsComponent } from './products/products.component';
-import { ProductsGuard, CategoriesGuard } from './guards/resolve.guard';
+import { ProductsGuard, CategoriesGuard, OrdersGuard } from './guards/resolve.guard';
 import { PaymentComponent } from './payment/payment.component';
 import { EditOrdersComponent } from './edit-orders/edit-orders.component';
 import { EditProductsComponent } from './edit-products/edit-products.component';
@@ -15,6 +15,7 @@ import { AuthGuard } from './guards/auth.guard';
 import {PaysuccessComponent} from './paysuccess/paysuccess.component';
 import { MenuComponent } from './menu/menu.component';
 import { CatalogManagerService } from './catalog-manager.service';
+import { isYieldExpression } from 'typescript';
 
 
 const routes: Routes = [
@@ -63,6 +64,9 @@ const routes: Routes = [
   {path: 'editorders',
     component: EditOrdersComponent,
     canActivate: [AuthGuard],
+    resolve: {
+      orderData: OrdersGuard
+    }
   },
   {path: 'editproducts',
     component: EditProductsComponent,

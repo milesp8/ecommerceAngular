@@ -22,6 +22,24 @@ export class ProductsGuard implements Resolve<any> {
   }*/
   
 }
+@Injectable({
+  providedIn: 'root'
+})
+export class OrdersGuard implements Resolve<any> {
+
+  constructor(private _appservice: AppServiceService) {}
+  resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<any> {
+    return this._appservice.getAllOrders()
+  }
+
+  /*
+  canActivate(
+    route: ActivatedRouteSnapshot,
+    state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
+    return true;
+  }*/
+  
+}
 
 @Injectable({
   providedIn: 'root'
