@@ -24,5 +24,29 @@ export class EditCategoriesComponent implements OnInit {
     }
   }
 
+   // to reload the page when some change has been made
+   runInit() {
+    window.location.reload();  
+  }
+
+  add(){
+    let cat_name = (<HTMLInputElement>document.getElementById('newCat')).value;
+
+    console.log('Category Name ' + cat_name);
+    if(cat_name != ''){
+      let cat_obj = {
+        "name": cat_name,
+        "products": [],
+        "image": "newcat_image"
+      }
+      this.appservice.addCategory(cat_obj).subscribe((data) =>{
+        console.log(data)
+        this.runInit()
+      }, (error) => {
+        console.log(error)
+      })
+    }
+  }
+
 
 }
