@@ -8,9 +8,27 @@
   button{
     text-align: center;
     padding: 18px;
-    background-color: #008B8B;
+    background-color: #cee0d4;
     border-radius: 10px;
+  }
+  button:hover{
+    transform: scale(.9);
+    background-color: #91c2a1;
   }
   section{
     text-align: center;
+  }
+  .col{
+    float: left;
+    width: 33.3%;
+    text-align: center;
+    border: ridge;
+    padding: 10px;
+  }
+  .grid{
+    display: flex;
+  }
+  .vl {
+    border-left: 6px solid rgb(0, 0, 0);
+    height: 500px;
   }

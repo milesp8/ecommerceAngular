@@ -10,22 +10,23 @@
 <!--End Welcome-->
 <hr>
 <!--Product Section-->
-<section>
-    <h2>Edit Products:</h2>
-    <p>Change Product Information, such as quantity, price, name, and variant information.<br>Product Information should only be changed in the case of external causes by admin</p>
-    <button type="button" class="collapsible" (click)="goProducts()">Open Editor</button> 
-</section>
-<!--End PS-->
-<hr>
-<!--Order Section-->
-<section>
-    <h2>Edit Orders:</h2>
-    <p>Change Order Information, such as user mistakes or cancelling an order.<br>Order Information should only be changed in the case of external causes by admin</p>
-    <button type="button" class="collapsible" (click)="goOrders()">Open Editor</button>
-</section>
-<hr>
-<section>
-    <h2>Edit Categories:</h2>
-    <p>Change Categories, or Remove a Category</p>
-    <button type="button" class="collapsible" (click)="goCategories()">Open Editor</button>
-</section>
+<div class="grid">
+    <div class="col">
+        <h2>Edit Products:</h2>
+        <p>Change Product Information, such as quantity, price, name, and variant information.<br>Product Information should only be changed in the case of external causes by admin</p>
+        <button type="button" class="collapsible" (click)="goProducts()">Open Editor</button> 
+    </div>
+    <!--End PS-->
+    <!--Order Section-->
+    <div class="col">
+        <h2>Edit Orders:</h2>
+        <p>Change Order Information, such as user mistakes or cancelling an order.<br>Order Information should only be changed in the case of external causes by admin</p>
+        <button type="button" class="collapsible" (click)="goOrders()">Open Editor</button>
+    </div>
+    <div class="col">
+        <h2>Edit Categories:</h2>
+        <p>Change Categories, or Remove a Category.<br>You can also add a new category.<br>Categories should rarely be changed.<br><br></p>
+        <button type="button" class="collapsible" (click)="goCategories()">Open Editor</button>
+    </div>
+    
+</div>
