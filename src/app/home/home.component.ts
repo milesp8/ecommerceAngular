@@ -39,7 +39,7 @@ export class HomeComponent implements OnInit {
         //_id: productsObj[productIndex]._id,
         name: productsObj[productIndex].name,
         price: productsObj[productIndex].variantIds[0].price,
-        img: 'assets/img/new.png',
+        img: '/assets/products/' + productsObj[productIndex].images[0],
         link: '/products/' + productIndex + '/0',
         description: productsObj[productIndex].description.toString()
 
@@ -49,8 +49,6 @@ export class HomeComponent implements OnInit {
       console.log(this.catManager.getName('5fc3ba1939919f84089b7407'));
       const prodCats = new Set<string>();
       productsObj[productIndex].categories.forEach(element => {
-        console.log('() ' + element);
-        console.log('{} ' + this.catManager.getName(element));
         prodCats.add(this.catManager.getName(element));
       });
       console.log(prodCats);

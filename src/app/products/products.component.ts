@@ -41,7 +41,7 @@ export class ProductsComponent implements OnInit {
       console.log(this.variants);
       this.name = productsObj[this.productId].name + ' (' + this.variants[this.variantNum].element.name + ')';
       this.price = this.variants[this.variantNum].element.price;
-      this.img = 'assets/img/new.png';
+      this.img = '/assets/products/' + productsObj[this.productId].images[this.variantNum];
       this.text =  productsObj[this.productId].description.toString();
     });
 
@@ -59,7 +59,7 @@ export class ProductsComponent implements OnInit {
   togglePaused() {
     console.log("Pause called")
     this.carousel.pause();
-    
+
   }
 
   ngAfterViewInit() {
