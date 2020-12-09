@@ -9,7 +9,7 @@ import { AppServiceService } from '../app-service.service';
 })
 export class EditCategoriesComponent implements OnInit {
 
-  catArr: {name: String}[] = [];
+  catArr: {name: String, _id: any}[] = [];
   constructor(private appservice: AppServiceService, private activatedRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
@@ -17,15 +17,16 @@ export class EditCategoriesComponent implements OnInit {
     const catsObj: any = this.activatedRoute.snapshot.data.catData;
 
     for (const catInd in catsObj) {
-      const item: {name: String} = {
+      const item: {name: String, _id: any} = {
         name: catsObj[catInd].name,
+        _id: catsObj[catInd]._id,
       }
       this.catArr.push(item);
     }
   }
 
    // to reload the page when some change has been made
-   runInit() {
+  runInit() {
     window.location.reload();  
   }
 
@@ -46,6 +47,16 @@ export class EditCategoriesComponent implements OnInit {
         console.log(error)
       })
     }
+  }
+
+  rem(cat_id: any){
+    console.log(cat_id);
+    this.appservice.deleteCategory(cat_id).subscribe((data) =>{
+      console.log(data)
+      this.runInit()
+    }, (error) => {
+      console.log(error)
+    })
   }
 
 

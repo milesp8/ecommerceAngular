@@ -3,8 +3,9 @@
     <h2>Remove Current Categories:</h2>
     <li *ngFor="let cat of catArr">
         <p>Category: {{cat.name}}</p>
+        <p>Category ID: {{cat._id}}</p>
         <div class="item-editor">
-            <button id={{cat.name}}.rem>Remove Category!</button>
+            <button id={{cat._id}}.rem (click)="rem(cat._id)">Remove Category!</button>
         </div>
     </li>
     <h2>Create a New Category:</h2>
