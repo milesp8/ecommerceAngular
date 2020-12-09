@@ -38,7 +38,7 @@
       left: 0;
       right: 0;
       height: 100px;
-      background-color:#5d6161;
+      background-color:#49545ea4;
       color: white;
       font-weight: 600;
   }
@@ -101,7 +101,7 @@
     height: 60px;
     display: flex;
     align-items: center;
-    background-color: #051524a4;
+    background-color: #49545ea4;
     color: white;
     font-weight: 600;
     position: fixed;
