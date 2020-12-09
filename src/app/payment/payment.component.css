@@ -17,7 +17,7 @@
 .row {
     display: flex;
     grid-template-columns: auto auto auto;
-    grid-gap: 50px;
+    grid-gap: 10px;
     padding-left: 0px;
 }
 
