@@ -33,6 +33,7 @@ export class HomeComponent implements OnInit {
 
   addAllItems(): void{
     const productsObj: any = this.activatedRoute.snapshot.data.prodData;
+    let count = 0;
     // tslint:disable-next-line: forin
     for (const productIndex in productsObj) {
       const item: {name: string, price: number, img: string, link: string, description: string} = {
@@ -54,8 +55,10 @@ export class HomeComponent implements OnInit {
         prodCats.add(this.catManager.getName(element));
       });
       console.log(prodCats);
-      if (prodCats.has('deal') || true)
-          {this.dealArr.push(item); }
+      if ((prodCats.has('deal') || true) && count < 4){
+        this.dealArr.push(item);
+        count++;
+      }
     }
   }
 
