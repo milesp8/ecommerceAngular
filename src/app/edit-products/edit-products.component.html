@@ -64,9 +64,9 @@
                     
                         <hr>
                         <p>Image Upload:</p>
-                        <input type="file" (change)="onFileSelected($event)" multiple>
+                        <input id="{{variant._id}}.imgBtn" type="file" (change)="imageUpload(variant._id, 'var')" single>
                         <div class="img-button">
-                            <img src="../assets/products/{{variant.img}}"  style="width: 100px; height: 100px; margin: 0; padding: 0; display: block;">
+                            <img id="{{variant._id}}.img" src="../assets/products/{{variant.img}}"  style="width: 100px; height: 100px; margin: 0; padding: 0; display: block;">
                         </div>
                         <hr>
                         <button id={{variant._id}}.removebtn (click)="variantRemove(variant._id)">Remove Variant</button>
@@ -85,8 +85,10 @@
                         </label>
                         <hr>
                         <p>Image Upload:</p>
-                        <input type="file" (change)="onFileSelected($event)" multiple>
-                        <div class="img-button">Choose Image</div>
+                        <input id="{{prod._id}}.imgBtn" type="file" (change)="imageUpload(prod._id, 'prod')" multiple>
+                        <div class="img-button">
+                            <img id="{{prod._id}}.img" src=""  style="width: 100px; height: 100px; margin: 0; padding: 0; display: block;">
+                        </div>
                         <button>Confirm Submission</button>
                         <hr>
                         <button (click)="variantAdd(prod._id)">Add Variant</button>

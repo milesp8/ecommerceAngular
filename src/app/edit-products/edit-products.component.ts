@@ -11,6 +11,9 @@ import { NgbModalConfig, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 export class EditProductsComponent implements OnInit {
 
   selectedFile = null
+  fileVariantId = null
+  fileProdId = null
+
   prodArr: {name: string, price: number, img: string, link: string, description: string, categories: string[]} [] = [];
   constructor(private appservice: AppServiceService, private activatedRoute: ActivatedRoute, 
               config: NgbModalConfig, private modalService: NgbModal) { }
@@ -67,6 +70,22 @@ export class EditProductsComponent implements OnInit {
     console.log(this.selectedFile)
   }
 
+  imageUpload(btnId, type) {
+    let filename = (<HTMLInputElement>document.getElementById(btnId+'.imgBtn')).value;
+    let name = filename.split('\\')
+
+    console.log(name[name.length - 1])
+
+    this.selectedFile=name[name.length - 1]
+
+    if(type == "prod") {
+      (<HTMLImageElement>document.getElementById(btnId+'.img')).src="../assets/products/"+this.selectedFile
+      this.fileProdId = btnId
+    } else {
+      (<HTMLImageElement>document.getElementById(btnId+'.img')).src="../assets/products/"+this.selectedFile
+      this.fileVariantId = btnId
+    }
+  }
   // to reload the page when some change has been made
   runInit() {
     window.location.reload();  
@@ -93,7 +112,6 @@ export class EditProductsComponent implements OnInit {
     if (variant_name == '' || variant_price == '' || variant_quantity == '') {
 
       if(variant_name == '') {
-
         document.getElementById(variantId+'.name').style.border="1.5px solid #ff0000"
       }
       if(variant_price == '') {
@@ -106,17 +124,27 @@ export class EditProductsComponent implements OnInit {
 
       console.log(variantId)
 
+      let fileName = null
+      if (this.fileVariantId == variantId) {
+        console.log("Same variant ID. So replace possible")
+        fileName = this.selectedFile
+      } else {
+        console.log("Not same variant ID. So replace not possible")
+        fileName = (<HTMLImageElement>document.getElementById(variantId+'.img')).src
+      }
+
+      console.log("FILENAME: ", fileName)
+
       let variantObj = {
         "_id": variantId,
         "name": variant_name,
         "price": variant_price,
-        "quantity": variant_quantity
+        "quantity": variant_quantity,
+        "images": [fileName]
       }
-      
-
       this.appservice.updateVariants(variantObj).subscribe((data) =>{
         console.log(data)
-        this.runInit()
+        //this.runInit()
       }, (error) => {
         console.log(error)
       })
