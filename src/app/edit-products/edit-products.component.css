@@ -54,3 +54,12 @@ li{
 .img-button:hover{
     background-color: rgb(102, 101, 101);
 }
+
+.modal-backdrop.fade
+{
+    opacity: 0.5;
+}
+.modal-open .modal
+{
+    opacity: 1;
+}
