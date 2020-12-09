@@ -3,12 +3,11 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { AppServiceService } from '../app-service.service';
 import { CartManagerService } from '../cart-manager.service';
 import { AfterViewInit, ViewChild } from '@angular/core';
-import { NgbCarousel } from '@ng-bootstrap/ng-bootstrap';
 
 
 
 @Component({
-  selector: 'app-products, ngbd-carousel-pause',
+  selector: 'app-products',
   templateUrl: './products.component.html',
   styleUrls: ['./products.component.css']
 })
@@ -22,14 +21,14 @@ export class ProductsComponent implements OnInit {
   variants = [];
   variantNum = 0;
 
-  images = ['../assets/products/black.png', '../assets/products/red.png', '../assets/products/blue.png', '../assets/img/new_2.png'];
+  images = [];
 
   constructor(private router: Router, private activeRoute: ActivatedRoute, private cartManager: CartManagerService) {
-
   }
 
   ngOnInit(): void {
     this.activeRoute.paramMap.subscribe(params => {
+      this.images = [];
       this.productId = Number.parseInt(params.get('id'), 0);
       this.variantNum = Number.parseInt(params.get('variant'), 0);
       let productsObj: any = this.activeRoute.snapshot.data['prodData'];
@@ -42,11 +41,14 @@ export class ProductsComponent implements OnInit {
       this.name = productsObj[this.productId].name + ' (' + this.variants[this.variantNum].element.name + ')';
       this.price = this.variants[this.variantNum].element.price;
       this.img = '/assets/products/' + productsObj[this.productId].images[this.variantNum];
+      productsObj[this.productId].images.forEach(element => {
+        this.images.push('/assets/products/' + element);
+      });
       this.text =  productsObj[this.productId].description.toString();
     });
 
-    this.carousel.pause();
 
+    console.log('IMG --- ' + this.images);
   }
   paused = false;
   unpauseOnArrow = false;
@@ -54,16 +56,9 @@ export class ProductsComponent implements OnInit {
   pauseOnHover = true;
   pauseOnFocus = true;
 
-  @ViewChild('carousel', {static : true}) carousel: NgbCarousel;
 
-  togglePaused() {
-    console.log("Pause called")
-    this.carousel.pause();
-
-  }
 
   ngAfterViewInit() {
-    this.carousel.pause();
   }
 
   addToCart(): void{

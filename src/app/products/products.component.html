@@ -1,48 +1,11 @@
-<div class = 'horizontal'>
-  <h4>Styles:</h4>
-  <div class='variant' *ngFor="let v of variants ; index as i">
-    <a routerLink={{v.link}}>
-      <button class ='v-button'>{{v.element.name}} ({{v.element.quantity}} in stock) <br><br>${{v.element.price}}</button>
-    </a>
-  </div>
-</div>
-
-<ul #grid class="grid-container">
-
-  <li>
-    <div class="grid-item">
-      <a>
-        <h3>{{name}}</h3>
-        <p>${{price}}</p>
-        <hr>
-        <button #add class='add' (click)='addToCart()'><p>Add to Cart:<b>+</b></p></button>
-        <hr>
-        <img class="images" src={{img}} alt="Product Image" width="400" height="400">
-      </a>
-    </div>
-    <div class="grid-item">
-      <h3>Product Description:</h3>
-      <hr>
-      <em>{{text}}</em>
-    </div>
-  </li>
-</ul>
-
-
 <main class="container">
 
   <!-- Left Column / Headphones Image -->
   <div class="left-column">
-    <ngb-carousel #carousel [interval]="1000" style="width: 650px; height: 650px">
-      <ng-template ngbSlide *ngFor="let img of images; index as i">
-        <div class="carousel-caption">
-          <h3>My slide {{i + 1}} title</h3>
+        <div>
+          <img src={{img}} alt="" id="i" style="width: 650px; height: 550px">
         </div>
-        <div class="picsum-img-wrapper">
-          <img [src]="img" alt="My image {{i + 1}} description" style="width: 650px; height: 650px">
-        </div>
-      </ng-template>  
-    </ngb-carousel>
+
   </div>
 
 
@@ -51,7 +14,7 @@
 
     <!-- Product Description -->
     <div class="product-description">
-      <span>Headphones</span>
+      <span></span>
       <h1>{{name}}</h1>
       <p>{{text}}</p>
     </div>
@@ -63,45 +26,23 @@
       <div class="product-color">
         <span>Variant</span>
 
-        <div class="variant-choose">
-          
-            <button data-image="red" type="button" id="red" name="color" value="red" checked>Red</button>
-            <label for="red"><span></span></label>
-          
-            <button data-image="blue" type="button" id="blue" name="color" value="blue">Blue</button>
-            <label for="blue"><span></span></label>
+        <div class="variant-choose" *ngFor="let v of variants ; index as i">
 
-            <button data-image="black" type="button" id="black" name="color" value="black">Black</button>
-            <label for="black"><span></span></label>
+          <a routerLink={{v.link}}>
+            <button class ='v-button'>{{v.element.name}} ({{v.element.quantity}} in stock)</button>
+          </a>
+
         </div>
 
-      </div>
-
-      <!-- Cable Configuration -->
-      <div class="cable-config">
-        <span>Cable configuration</span>
-
-        <div class="cable-choose">
-          <button>Straight</button>
-          <button>Coiled</button>
-          <button>Long-coiled</button>
-        </div>
       </div>
     </div>
 
     <!-- Product Pricing -->
     <div class="product-price">
-      <span>148$</span>
-      <a href="#" class="cart-btn">Add to cart</a>
+      <span>${{price}}</span>
+      <button class="cart-btn" (click)='addToCart()'>Add to cart</button>
     </div>
   </div>
 </main>
-
-
-
-
-<button type="button" (click)="togglePaused()" class="btn btn-outline-dark btn-sm">
-  {{paused ? 'Cycle' : 'Pause' }}
-</button>
 
 
