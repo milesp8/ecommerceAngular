@@ -5,6 +5,7 @@
 .grid-container {
     display: grid;
     background-color: rgba(29, 204, 102, 0.425);
+    background-image: linear-gradient(180deg, rgba(29, 204, 102, 0.425),  rgba(25, 173, 87, 0.425) 40%, rgba(19, 129, 65, 0.425));
     grid-template-columns: auto;
     padding: 40px;
     grid-column-gap: 25px;
@@ -29,6 +30,7 @@
     padding: 10px;
     border: solid;
     border-radius: 10px;
+    background-image: linear-gradient(180deg, #fff, #ddd 40%, #ccc);
 }
 
 hr {
