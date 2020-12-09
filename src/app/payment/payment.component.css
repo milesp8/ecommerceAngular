@@ -11,18 +11,22 @@
     grid-column-gap: 25px;
     /*grid-row-gap: 100px;*/
     border-radius: 20px;
+    width: 100%;
     border: solid;    
 }
 .row {
     display: flex;
     grid-template-columns: auto auto auto;
+    grid-gap: 50px;
+    padding-left: 0px;
 }
 
 .shadowbox {
-    width: 15em;
+    width: 100%;
     border: 1px solid #333;
     box-shadow: 8px 8px 5px #444;
     padding: 8px 12px;
+    padding-left: 20px;
     margin-bottom: 30px;
     background-image: linear-gradient(180deg, #fff, #ddd 40%, #ccc);
 }
