@@ -99,6 +99,7 @@ export class PaymentComponent implements OnInit {
         
         console.log(this.appService.getAllOrders());
         this.cartManager.clearCart();
+        this.toggleToolbar();
         this.router.navigate(["/paysuccess"]);
       }
     }
