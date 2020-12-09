@@ -1,41 +1,28 @@
-  <section>
-  <img src="../assets/img/unoadmin.png" width="200px">
-  <h2>Welcome! Please login</h2>
-  <div class="login-page">
+<section>
+    <h2>Please login</h2>
 
     <div class="container">
-    
-      <div class="row">
-        <div class="col-2"></div>
-        <div class="col-2">
-          <div class="form-container">
-            <div class="form-btn" style="border-color: red;">
-              <span>Login</span>
-            </div>
-
-            <form id="LoginForm">
-
-              <label> Email:</label>
-              <input id="emailId" type="text" placeholder="Email" required>
-
-              <label>Password:</label>
-              <input id="pswId" type="password" placeholder="Passoword" required autocomplete="false">
-              <button id="loginBtn" class="btn btn-default" (click)="userlogin()" type="button">Login</button>
-              <div>
-                <h5 id="loginStatId" style="color:red; font-size: 1.2em;">{{status}}</h5>
+      
+      <div class="card form-container">
+          <!-- <img class="profile-img-card" src="//lh3.googleusercontent.com/-6V8xOA6M7BA/AAAAAAAAAAI/AAAAAAAAAAA/rzlHcD0KYwo/photo.jpg?sz=120" alt="" /> -->
+          <img id="profile-img" class="profile-img-card" src="//ssl.gstatic.com/accounts/ui/avatar_2x.png" />
+          <p></p>
+          <form class="form-signin">
+              <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+              <input type="password" id="inputPass" class="form-control" placeholder="Password" required autofocus>
+              <div id="remember" class="checkbox">
+                  <label>
+                      <input type="checkbox" value="remember-me"> Remember me
+                  </label>
               </div>
-            </form>
-          </div>
-          
-        </div>
-        <div class="col-2"></div>
-        
-      </div>
+              <button class="btn btn-lg btn-primary btn-block btn-signin" id="loginBtn" type="button" (click)="userlogin()">Sign in</button>
+          </form><!-- /form -->
+      </div><!-- /card-container -->
     </div>
-    
-  </div>
       
 </section>
+
+
     
   
 

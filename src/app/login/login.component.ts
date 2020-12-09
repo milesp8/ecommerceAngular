@@ -23,8 +23,8 @@ export class LoginComponent implements OnInit {
 
   userlogin (){
     
-    let email = (<HTMLInputElement>document.getElementById('emailId')).value;
-    let password = (<HTMLInputElement>document.getElementById('pswId')).value;
+    let email = (<HTMLInputElement>document.getElementById('inputEmail')).value;
+    let password = (<HTMLInputElement>document.getElementById('inputPass')).value;
 
     if (email == '' || password == '') {
       this.status = 'Please enter email and password'
