@@ -101,6 +101,7 @@
     color: white;
     font-weight: 600;
     position: fixed;
+    z-index: 99999;
   }
   .toolbar button{
     border-radius: 5px;
