@@ -24,12 +24,12 @@
 
       <!-- Product Color -->
       <div class="product-color">
-        <span>Variant</span>
+        <span> Choose a Variant</span>
 
         <div class="variant-choose" *ngFor="let v of variants ; index as i">
 
           <a routerLink={{v.link}}>
-            <button class ='v-button'>{{v.element.name}} ({{v.element.quantity}} in stock)</button>
+            <button class ='v-button'>{{v.element.name}}</button>
           </a>
 
         </div>
